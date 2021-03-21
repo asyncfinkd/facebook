@@ -1,6 +1,6 @@
 {
   "name": "facebook",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
@@ -14,6 +14,7 @@
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
     "typescript": "^4.2.3",
+    "veucss": "^1.4.0",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
@@ -39,5 +40,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": ":robot: :rocket: Facebook With React Typescript",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asyncfinkd/facebook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asyncfinkd/facebook/issues"
+  },
+  "homepage": "https://github.com/asyncfinkd/facebook#readme"
 }
