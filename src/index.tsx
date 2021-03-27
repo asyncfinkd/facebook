@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import "../node_modules/veucss/src/css/veu.css";
 import "./components/scss/index/index.css";
+import reportWebVitals from "./web-setup/reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
