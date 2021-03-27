@@ -28,6 +28,7 @@ export const Hero: React.FC = () => {
                   <div>
                     <input
                       type="text"
+                      type="text"
                       className="fb-log-input max-w-full"
                       placeholder="Email address or phone number"
                     />
