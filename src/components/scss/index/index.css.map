@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "index.scss",
+        "../feature/_feature.scss"
+    ],
+    "names": [],
+    "file": "index.css"
+}
