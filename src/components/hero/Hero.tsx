@@ -164,3 +164,4 @@ export const Hero: React.FC = () => {
     </>
   );
 };
+/* React */
