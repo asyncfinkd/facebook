@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import "../node_modules/veucss/dist/css/veu.css";
+import "./components/css/Veu.css";
 
 ReactDOM.render(
   <React.StrictMode>
