@@ -10,12 +10,16 @@
     @warn "This Component less 2 character";
   } @else {
     // This is Work Condition
-    width: $dir;
+    @for $var from 0 to length($dir) {
+      @if $var not length($dir) {
+        width: $dir;
+      }
+    }
   }
 }
 
 @mixin Height($dir) {
-  // Mixin For Width
+  // Mixin For Height
   @if not $dir {
     // Warning if this condition don't working.
     @warn "This Component not working";
@@ -24,6 +28,10 @@
     @warn "This Component less 2 character";
   } @else {
     // This is Work Condition
-    width: $dir;
+    @for $var from 0 to length($dir) {
+      @if $var not length($dir) {
+        height: $dir;
+      }
+    }
   }
 }
