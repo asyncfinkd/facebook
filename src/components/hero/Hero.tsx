@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 export const Hero: React.FC = () => {
   //   const [input, setInput] = useState<any>("");
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [password, setPassword] = useState<any>("");
   return (
     <>
       <div className="container">
@@ -31,24 +33,34 @@ export const Hero: React.FC = () => {
                       className="fb-log-input max-w-full"
                       placeholder="Email address or phone number"
                     />
-                    <div className="relative">
+                    <div className="relative mt-3">
                       <input
-                        type="password"
-                        id="input"
+                        type={showPassword ? "text" : "password"}
                         className="fb-log-input max-w-full"
+                        value={password}
+                        onChange={(e) => {
+                          setPassword(e.target.value);
+                        }}
                         placeholder="Password"
                       />
-                      <div
-                        className="w-7 h-7 absolute max-border-radius right-1 password-icon-container"
-                        style={{ bottom: "9px" }}
-                        id="password:button"
-                      >
+                      {password.length > 0 && (
                         <div
-                          id="icon:show-password"
-                          className="password-icon w-4 h-4 p-3"
-                          style={{ bottom: "6px", right: "6px" }}
-                        ></div>
-                      </div>
+                          className="w-7 h-7 absolute max-border-radius right-1 password-icon-container"
+                          style={{ bottom: "9px" }}
+                          onClick={() => {
+                            setShowPassword(!showPassword);
+                          }}
+                        >
+                          <div
+                            className={
+                              showPassword
+                                ? "password-close-icon-container w-4 h-4 p-3"
+                                : "password-icon w-4 h-4 p-3"
+                            }
+                            style={{ bottom: "6px", right: "6px" }}
+                          ></div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </form>
