@@ -20,12 +20,6 @@ body {
   height: 106px;
 }
 
-@media all and (max-width: 990px) {
-  .position-gx {
-    margin: 0;
-  }
-}
-
 .fb-log-container {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -151,4 +145,44 @@ body {
   font-size: 13px;
   line-height: 16px;
   margin-top: 8px;
+}
+
+@media all and (max-width: 1250px) {
+  .position-gx {
+    margin: 0;
+  }
+}
+
+@media all and (max-width: 990px) {
+  .responsive\:info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .responsive\:validation {
+    width: 550px;
+    margin-right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .forgotPassword\:responsive {
+    margin-right: 0rem !important;
+  }
+}
+
+@media all and (max-width: 433px) {
+  .input-error-icon {
+    right: 20px;
+  }
+}
+
+@media all and (max-width: 385px) {
+  .input-error-icon {
+    display: none !important;
+  }
 }

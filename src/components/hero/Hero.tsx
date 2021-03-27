@@ -28,7 +28,7 @@ export const Hero: React.FC = () => {
     <>
       <div className="container">
         <div className="row items-center justify-center h-screen">
-          <div className="column position-gx">
+          <div className="column position-gx responsive:info">
             <img
               src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg"
               alt="Facebook"
@@ -38,16 +38,17 @@ export const Hero: React.FC = () => {
               Facebook helps you connect and share with the people in your life.
             </h2>
           </div>
-          <div className="column-5 mr-6">
+          <div className="column-5 mr-6 responsive:validation">
             <div className="fb-log-container max-w-full">
               <div className="display:flex justify-center items-center flex-column max-w-full">
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
                   }}
-                  className="max-w-full display:flex justify-center items-center flex-column"
+                  style={{ padding: "0 10px" }}
+                  className="max-w-full form:res display:flex justify-center items-center flex-column"
                 >
-                  <div className="relative display:flex justify-center items-center flex-column">
+                  <div className="relative display:flex justify-center items-center flex-column max-w-full">
                     <input
                       type="text"
                       autoFocus
@@ -70,12 +71,13 @@ export const Hero: React.FC = () => {
                         <i className="input-error-icon absolute"></i>
                         <div className="text-left fb-text-error ml-4 mr-2">
                           The email address or mobile number you entered isn't
-                          connected to an account. Find your account and log in.
+                          connected to an account.{" "}
+                          <strong>Find your account and log in.</strong>
                         </div>
                       </>
                     )}
                   </div>
-                  <div className="relative mt-3 display:flex items-center justify-center flex-column">
+                  <div className="relative mt-3 display:flex items-center justify-center flex-column max-w-full">
                     <input
                       type={showPassword ? "text" : "password"}
                       className={
@@ -152,7 +154,7 @@ export const Hero: React.FC = () => {
                 </form>
               </div>
             </div>
-            <div className="mt-6 fb-group-log text-center mr-14">
+            <div className="mt-6 fb-group-log text-center mr-14 forgotPassword:responsive">
               <strong style={{ cursor: "pointer" }}>Create a Page</strong> for a
               celebrity, band or business.
             </div>
