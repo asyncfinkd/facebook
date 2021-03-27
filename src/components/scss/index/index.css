@@ -69,4 +69,116 @@ body {
 .fb-log-input:focus::placeholder {
   opacity: 0.6;
 }
+
+.fb-button-log {
+  background-color: #1877f2;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  border-radius: 6px;
+  line-height: 48px;
+  padding: 0 16px;
+  width: 365px;
+  color: white;
+  -webkit-transition: background-color 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), -webkit-box-shadow 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), -webkit-transform 0.2s cubic-bezier(0.08, 0.52, 0.52, 1);
+  transition: background-color 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), -webkit-box-shadow 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), -webkit-transform 0.2s cubic-bezier(0.08, 0.52, 0.52, 1);
+  transition: background-color 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), box-shadow 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), transform 0.2s cubic-bezier(0.08, 0.52, 0.52, 1);
+  transition: background-color 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), box-shadow 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), transform 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), -webkit-box-shadow 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), -webkit-transform 0.2s cubic-bezier(0.08, 0.52, 0.52, 1);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.fb-button-log:hover {
+  background-color: #166fe5;
+}
+
+.fb-forgot-log {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1877f2;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.fb-forgot-log:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.fb-hr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 365px;
+  text-align: center;
+  border-bottom: 1px solid #dadde1;
+  margin-top: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fb-create-log {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  -webkit-transition: background-color 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), -webkit-box-shadow 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), -webkit-transform 0.2s cubic-bezier(0.08, 0.52, 0.52, 1);
+  transition: background-color 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), -webkit-box-shadow 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), -webkit-transform 0.2s cubic-bezier(0.08, 0.52, 0.52, 1);
+  transition: background-color 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), box-shadow 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), transform 0.2s cubic-bezier(0.08, 0.52, 0.52, 1);
+  transition: background-color 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), box-shadow 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), transform 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), -webkit-box-shadow 0.2s cubic-bezier(0.08, 0.52, 0.52, 1), -webkit-transform 0.2s cubic-bezier(0.08, 0.52, 0.52, 1);
+  line-height: 48px;
+  padding: 0 16px;
+  cursor: pointer;
+  background-color: #42b72a;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+}
+
+.fb-create-log:hover {
+  background-color: #36a420;
+}
+
+.fb-create-log:focus {
+  background-color: #2b9217;
+}
+
+.fb-group-log {
+  font-size: 14px;
+  color: #1c1e21;
+}
+
+.fb-input-error {
+  border: 1px solid red !important;
+  caret-color: black !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.input-error-icon {
+  width: 20px;
+  height: 20px;
+  background-position: 0 -183px;
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/r9i08iytr0n.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  right: 27px;
+  top: 16%;
+}
+
+.none {
+  display: none !important;
+}
+
+.fb-text-error {
+  color: #f02849;
+  font-size: 13px;
+  line-height: 16px;
+  margin-top: 8px;
+}
 /*# sourceMappingURL=index.css.map */
