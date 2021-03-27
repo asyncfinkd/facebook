@@ -19,15 +19,3 @@
 Facebook is an open source where you can contribute at any time. For this we need to get acquainted first with our policies. 
 
 Please read [CONTRIBUTING.md](https://github.com/asyncfinkd/facebook) for details on this project.
-
-## How can I use it?
-
-Using the project is the easiest. You need to download our files. And just install it.
-
-When you download a web project, run it in your editor terminal:
-
-```jsx
-npm install
-```
-
-I wish you happy hacking.
