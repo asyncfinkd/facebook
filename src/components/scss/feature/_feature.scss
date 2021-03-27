@@ -1,0 +1,55 @@
+body {
+  background-color: #f0f2f5;
+  font-family: sans-serif;
+}
+
+.w-500px {
+  width: 500px;
+}
+
+.text-28px {
+  font-size: 28px;
+}
+
+.position-gx {
+  margin-top: -75px;
+  margin-left: 55px;
+}
+
+.h-106px {
+  height: 106px;
+}
+
+@media all and (max-width: 990px) {
+  .position-gx {
+    margin: 0;
+  }
+}
+
+.fb-log-container {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px 0 28px;
+  width: 395px;
+}
+
+.fb-log-input {
+  border: 1px solid #dddfe2;
+  outline: none;
+  border-radius: 6px;
+  color: #1d2129;
+  font-size: 17px;
+  line-height: 16px;
+  padding: 14px 16px;
+  width: 365px;
+  max-width: 100%;
+  &:focus {
+    border-color: #1877f2;
+    caret-color: #1877f2;
+    box-shadow: 0 0 0 2px #e7f3ff;
+  }
+  &:focus::placeholder {
+    opacity: 0.6;
+  }
+}
