@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" height="150" />
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <strong>Facebook helps you connect and share with the people in your life.</strong>
+</p>
 
-## Available Scripts
+<h3 align="center">
+  <a href="">Contribute</a>
+  <span> · </span>
+  <a href="https://facebook.com">Official Facebook</a>
+</h3>
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Contributions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Facebook is an open source where you can contribute at any time. For this we need to get acquainted first with our policies. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Please read [CONTRIBUTING.md](https://github.com/asyncfinkd/facebook) for details on this project.
 
-### `npm test`
+## How can I use it?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Using the project is the easiest. You need to download our files. And just install it.
 
-### `npm run build`
+When you download a web project, run it in your editor terminal:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```jsx
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+I wish you happy hacking.
