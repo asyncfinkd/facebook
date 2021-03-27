@@ -1,0 +1,29 @@
+// Function (scss)
+
+@mixin Width($dir) {
+  // Mixin For Width
+  @if not $dir {
+    // Warning if this condition don't working.
+    @warn "This Component not working";
+  } @else if length($dir) > 2 {
+    // Second Warning if this condition less 2 characters.
+    @warn "This Component less 2 character";
+  } @else {
+    // This is Work Condition
+    width: $dir;
+  }
+}
+
+@mixin Height($dir) {
+  // Mixin For Width
+  @if not $dir {
+    // Warning if this condition don't working.
+    @warn "This Component not working";
+  } @else if length($dir) > 2 {
+    // Second Warning if this condition less 2 characters.
+    @warn "This Component less 2 character";
+  } @else {
+    // This is Work Condition
+    width: $dir;
+  }
+}

@@ -1,10 +1,12 @@
+@import "../variables";
+@import "../functions";
 body {
   background-color: #f0f2f5;
   font-family: sans-serif;
 }
 
 .w-500px {
-  width: 500px;
+  @include Width(500px);
 }
 
 .text-28px {
@@ -17,7 +19,7 @@ body {
 }
 
 .h-106px {
-  height: 106px;
+  @include Height(106px);
 }
 
 .fb-log-container {
@@ -25,7 +27,7 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 20px 0 28px;
-  width: 395px;
+  @include Width(395px);
 }
 
 .fb-log-input {
@@ -36,7 +38,7 @@ body {
   font-size: 17px;
   line-height: 16px;
   padding: 14px 16px;
-  width: 365px;
+  @include Width(365px);
   max-width: 100%;
   &:focus {
     border-color: #1877f2;
@@ -49,14 +51,14 @@ body {
 }
 
 .fb-button-log {
-  background-color: #1877f2;
+  background-color: $--fb-bg-color;
   border: none;
   outline: none;
   font-size: 20px;
   border-radius: 6px;
   line-height: 48px;
   padding: 0 16px;
-  width: 365px;
+  @include Width(365px);
   color: rgb(255, 255, 255);
   transition: background-color 0.2s cubic-bezier(0.08, 0.52, 0.52, 1),
     box-shadow 0.2s cubic-bezier(0.08, 0.52, 0.52, 1),
@@ -64,14 +66,14 @@ body {
   font-weight: 700;
   cursor: pointer;
   &:hover {
-    background-color: #166fe5;
+    background-color: $--fb-bg-hover-color;
   }
 }
 
 .fb-forgot-log {
   font-size: 14px;
   font-weight: 500;
-  color: #1877f2;
+  color: $--fb-bg-color;
   cursor: pointer;
   text-decoration: none;
   text-decoration-line: none;
@@ -84,7 +86,7 @@ body {
 
 .fb-hr {
   display: flex;
-  width: 365px;
+  @include Width(365px);
   text-align: center;
   border-bottom: 1px solid #dadde1;
   margin-top: 20px;
@@ -102,15 +104,15 @@ body {
   line-height: 48px;
   padding: 0 16px;
   cursor: pointer;
-  background-color: #42b72a;
+  background-color: $--fb-bg-green-color;
   font-weight: 700;
   color: rgb(255, 255, 255);
   text-align: center;
   &:hover {
-    background-color: #36a420;
+    background-color: $--fb-bg-green-hover-color;
   }
   &:focus {
-    background-color: #2b9217;
+    background-color: $--fb-bg-green-focus-color;
   }
 }
 
@@ -126,8 +128,8 @@ body {
 }
 
 .input-error-icon {
-  width: 20px;
-  height: 20px;
+  @include Width(20px);
+  @include Height(20px);
   background-position: 0 -183px;
   background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/r9i08iytr0n.png");
   background-repeat: no-repeat;
@@ -163,15 +165,8 @@ body {
     margin-top: 10px;
   }
   .responsive\:validation {
-    width: 550px;
+    @include Width(550px);
     margin-right: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .forgotPassword\:responsive {
-    margin-right: 0rem !important;
   }
 }
 

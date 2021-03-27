@@ -38,7 +38,7 @@ export const Hero: React.FC = () => {
               Facebook helps you connect and share with the people in your life.
             </h2>
           </div>
-          <div className="column-5 mr-6 responsive:validation">
+          <div className="column-5 mr-12 display:flex items-center justify-center flex-column responsive:validation">
             <div className="fb-log-container max-w-full">
               <div className="display:flex justify-center items-center flex-column max-w-full">
                 <form
@@ -154,7 +154,7 @@ export const Hero: React.FC = () => {
                 </form>
               </div>
             </div>
-            <div className="mt-6 fb-group-log text-center mr-14 forgotPassword:responsive">
+            <div className="mt-6 fb-group-log text-center forgotPassword:responsive">
               <strong style={{ cursor: "pointer" }}>Create a Page</strong> for a
               celebrity, band or business.
             </div>
