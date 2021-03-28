@@ -1,4 +1,5 @@
 import React from "react";
+import { Day } from "../date/day/Day";
 
 interface Props {
   closeModal?: any;
@@ -10,6 +11,8 @@ interface Props {
   lastNameHandle?: any;
   emailMobileHandle?: any;
   passwordHandle?: any;
+  selectValue?: any;
+  selectHandle?: any;
 }
 
 export const Signin: React.FC<Props> = ({
@@ -22,6 +25,8 @@ export const Signin: React.FC<Props> = ({
   lastNameHandle,
   emailMobileHandle,
   passwordHandle,
+  selectValue,
+  selectHandle,
 }) => {
   return (
     <>
@@ -160,6 +165,20 @@ export const Signin: React.FC<Props> = ({
                     value={password}
                     onChange={passwordHandle}
                   />
+                </div>
+                <div
+                  className="birthday-scss max-w-full"
+                  style={{
+                    fontWeight: "normal",
+                    lineHeight: "20px",
+                    color: "#606770",
+                    fontSize: "13px",
+                    marginTop: "12px",
+                  }}
+                >
+                  Date of birth
+                  <br />
+                  <Day selectValue={selectValue} handleSelect={selectHandle} />
                 </div>
               </div>
             </div>

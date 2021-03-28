@@ -15,6 +15,7 @@ export const Hero: React.FC = () => {
   const [lastName, setLastName] = useState<string>("");
   const [newPassword, setNewPassword] = useState<string>("");
   const [emailMobile, setEmailMobile] = useState<string>("");
+  const [selectValue, setSelectValue] = useState<string>("");
   const passwordErrorRef = useRef<HTMLInputElement>(null);
   const renderLogIn = () => {
     if (!emailPhoneNumber) {
@@ -53,6 +54,10 @@ export const Hero: React.FC = () => {
             }}
             passwordHandle={(e: any) => {
               setNewPassword(e.target.value);
+            }}
+            selectValue={selectValue}
+            selectHandle={(e: any) => {
+              setSelectValue(e.target.value);
             }}
           />
         </>
