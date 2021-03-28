@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Signin } from "../signin/Signin";
 
 export const Hero: React.FC = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -29,132 +30,11 @@ export const Hero: React.FC = () => {
     <>
       {showModal && (
         <>
-          <div
-            className="fixed inset-auto w-full h-screen z-40 max-w-full"
-            style={{ backgroundColor: "hsla(0,0%,100%,.8)" }}
-          >
-            <div
-              className="z-50 max-w-full bg-body absolute"
-              style={{
-                left: "33.5%",
-                top: "35%",
-                width: "432px",
-                borderRadius: "6px",
-                boxShadow:
-                  "0 2px 4px rgba(0,0,0,.1), 0 8px 16px rgba(0,0,0,.1)",
-              }}
-            >
-              <img
-                src="https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/__geKiQnSG-.png"
-                alt="Close"
-                className="absolute"
-                style={{
-                  top: "12px",
-                  right: "10px",
-                  width: "24px",
-                  height: "24px",
-                }}
-              />
-              <div style={{ padding: "16px" }}>
-                <div
-                  style={{
-                    color: "#1c1e21",
-                    fontSize: "32px",
-                    lineHeight: "38px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Sign Up
-                </div>
-                <div
-                  style={{
-                    color: "#606770",
-                    fontSize: "15px",
-                    fontWeight: "normal",
-                    lineHeight: "24px",
-                  }}
-                >
-                  It’s quick and easy.
-                </div>
-              </div>
-              <div style={{ borderTop: "1px solid #dadde1", padding: "16px" }}>
-                <div className="display:flex items-center">
-                  <input
-                    type="text"
-                    style={{
-                      width: "190px",
-                      padding: "9px",
-                      outline: "none",
-                      color: "#1c1e21",
-                      fontSize: "15px",
-                      backgroundColor: "#f5f6f7",
-                      borderRadius: "5px",
-                      border: "1px solid #ccd0d5",
-                    }}
-                    className="focus"
-                    placeholder="First name"
-                    aria-label="First name"
-                  />
-                  <input
-                    type="text"
-                    style={{
-                      width: "190px",
-                      padding: "9px",
-                      outline: "none",
-                      color: "#1c1e21",
-                      fontSize: "15px",
-                      backgroundColor: "#f5f6f7",
-                      borderRadius: "5px",
-                      border: "1px solid #ccd0d5",
-                    }}
-                    className="focus ml-3"
-                    placeholder="Last name"
-                    aria-label="Last name"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="text"
-                    className="focus"
-                    placeholder="Mobile number or email"
-                    style={{
-                      padding: "11px",
-                      fontSize: "15px",
-                      marginTop: "10px",
-                      outline: "none",
-                      maxWidth: "100%",
-                      width: "392px",
-                      lineHeight: "16px",
-                      color: "#1c1e21",
-                      border: "1px solid #ccd0d5",
-                      backgroundColor: "#f5f6f7",
-                      borderRadius: "5px",
-                    }}
-                    aria-label="Mobile Number or email"
-                  />
-                  <input
-                    type="text"
-                    className="focus"
-                    placeholder="New password"
-                    style={{
-                      padding: "11px",
-                      fontSize: "15px",
-                      marginTop: "10px",
-                      outline: "none",
-                      maxWidth: "100%",
-                      width: "392px",
-                      lineHeight: "16px",
-                      color: "#1c1e21",
-                      border: "1px solid #ccd0d5",
-                      backgroundColor: "#f5f6f7",
-                      borderRadius: "5px",
-                    }}
-                    aria-label="New password"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+          <Signin
+            closeModal={() => {
+              setShowModal(false);
+            }}
+          />
         </>
       )}
       <div className="container">

@@ -153,13 +153,11 @@ body {
   margin-top: 8px;
 }
 
-@media all and (max-width: 1250px) {
-  .position-gx {
-    margin: 0;
-  }
+.padding-default-0 {
+  --bs-gutter-x: 0px !important;
 }
 
-@media all and (max-width: 990px) {
+@media all and (max-width: 1250px) {
   .responsive\:info {
     display: flex;
     align-items: center;
@@ -171,6 +169,9 @@ body {
   .responsive\:validation {
     @include Width(550px);
     margin-right: 0px;
+  }
+  .position-gx {
+    margin: 0;
   }
 }
 
