@@ -1,5 +1,6 @@
 import React from "react";
 import { Day } from "../date/day/Day";
+import { Month } from "../date/month/Month";
 
 interface Props {
   closeModal?: any;
@@ -13,6 +14,8 @@ interface Props {
   passwordHandle?: any;
   selectValue?: any;
   selectHandle?: any;
+  monthValue?: any;
+  monthHandle?: any;
 }
 
 export const Signin: React.FC<Props> = ({
@@ -27,6 +30,8 @@ export const Signin: React.FC<Props> = ({
   passwordHandle,
   selectValue,
   selectHandle,
+  monthValue,
+  monthHandle,
 }) => {
   return (
     <>
@@ -174,11 +179,13 @@ export const Signin: React.FC<Props> = ({
                     color: "#606770",
                     fontSize: "13px",
                     marginTop: "12px",
+                    marginLeft: "3px",
                   }}
                 >
                   Date of birth
                   <br />
                   <Day selectValue={selectValue} handleSelect={selectHandle} />
+                  <Month monthValue={monthValue} monthHandle={monthHandle} />
                 </div>
               </div>
             </div>

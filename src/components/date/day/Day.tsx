@@ -12,6 +12,20 @@ export const Day: React.FC<Props> = ({ selectValue, handleSelect }) => {
       <select
         aria-label="Day"
         name="birthday_day"
+        style={{
+          borderRadius: "4px",
+          color: "#1c1e21",
+          fontSize: "15px",
+          border: "1px solid #ccd0d5",
+          outline: "none",
+          height: "36px",
+          fontWeight: "normal",
+          lineHeight: "20px",
+          padding: "0 8px",
+          width: "123px",
+          backgroundColor: "transparent",
+          marginTop: "2px",
+        }}
         value={selectValue}
         onChange={handleSelect}
         id="day"
