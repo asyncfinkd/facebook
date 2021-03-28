@@ -11,6 +11,10 @@ export const Hero: React.FC = () => {
   const [password, setPassword] = useState<any>("");
   const [showModal, setShowModal] = useState<boolean>(false);
   const [passwordError, setPasswordError] = useState<boolean>(false);
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [newPassword, setNewPassword] = useState<string>("");
+  const [emailMobile, setEmailMobile] = useState<string>("");
   const passwordErrorRef = useRef<HTMLInputElement>(null);
   const renderLogIn = () => {
     if (!emailPhoneNumber) {
@@ -33,6 +37,22 @@ export const Hero: React.FC = () => {
           <Signin
             closeModal={() => {
               setShowModal(false);
+            }}
+            firstName={firstName}
+            lastName={lastName}
+            emailMobile={emailMobile}
+            password={newPassword}
+            firstNameHandle={(e: any) => {
+              setFirstName(e.target.value);
+            }}
+            lastNameHandle={(e: any) => {
+              setLastName(e.target.value);
+            }}
+            emailMobileHandle={(e: any) => {
+              setEmailMobile(e.target.value);
+            }}
+            passwordHandle={(e: any) => {
+              setNewPassword(e.target.value);
             }}
           />
         </>

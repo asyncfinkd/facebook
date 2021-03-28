@@ -1,11 +1,15 @@
 import React from "react";
 
 interface Props {
-  closeModal: any;
+  closeModal?: any;
   firstName: string;
   lastName: string;
   emailMobile: string;
   password: string;
+  firstNameHandle?: any;
+  lastNameHandle?: any;
+  emailMobileHandle?: any;
+  passwordHandle?: any;
 }
 
 export const Signin: React.FC<Props> = ({
@@ -14,6 +18,10 @@ export const Signin: React.FC<Props> = ({
   lastName,
   emailMobile,
   password,
+  firstNameHandle,
+  lastNameHandle,
+  emailMobileHandle,
+  passwordHandle,
 }) => {
   return (
     <>
@@ -88,6 +96,7 @@ export const Signin: React.FC<Props> = ({
                     placeholder="First name"
                     aria-label="First name"
                     value={firstName}
+                    onChange={firstNameHandle}
                   />
                   <input
                     type="text"
@@ -105,6 +114,7 @@ export const Signin: React.FC<Props> = ({
                     placeholder="Last name"
                     aria-label="Last name"
                     value={lastName}
+                    onChange={lastNameHandle}
                   />
                 </div>
                 <div>
@@ -127,6 +137,7 @@ export const Signin: React.FC<Props> = ({
                     }}
                     aria-label="Mobile Number or email"
                     value={emailMobile}
+                    onChange={emailMobileHandle}
                   />
                   <input
                     type="password"
@@ -146,7 +157,8 @@ export const Signin: React.FC<Props> = ({
                       borderRadius: "5px",
                     }}
                     aria-label="New password"
-                    value={emailMobile}
+                    value={password}
+                    onChange={passwordHandle}
                   />
                 </div>
               </div>
