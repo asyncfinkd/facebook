@@ -185,11 +185,27 @@ body {
   display: none !important;
 }
 
+.linker {
+  color: #385898;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.linker:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
 .fb-text-error {
   color: #f02849;
   font-size: 13px;
   line-height: 16px;
   margin-top: 8px;
+}
+
+._hover-scss:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#79bc64), to(#578843));
+  background: linear-gradient(#79bc64, #578843);
 }
 
 .padding-default-0 {

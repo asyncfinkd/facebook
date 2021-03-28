@@ -23,7 +23,7 @@ export const Year: React.FC<Props> = ({ yearValue, yearHandle }) => {
           fontWeight: "normal",
           lineHeight: "20px",
           padding: "0 8px",
-          width: "123px",
+          width: "120px",
           backgroundColor: "transparent",
           marginTop: "2px",
         }}

@@ -150,11 +150,26 @@ body {
 
 // }
 
+.linker {
+  color: #385898;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration-line: underline;
+  }
+}
+
 .fb-text-error {
   color: #f02849;
   font-size: 13px;
   line-height: 16px;
   margin-top: 8px;
+}
+
+._hover-scss {
+  &:hover {
+    background: linear-gradient(#79bc64, #578843);
+  }
 }
 
 .padding-default-0 {
