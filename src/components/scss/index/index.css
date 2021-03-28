@@ -29,6 +29,22 @@ body {
   width: 395px;
 }
 
+.focus:focus::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+
+.focus:focus:-ms-input-placeholder {
+  opacity: 0.5;
+}
+
+.focus:focus::-ms-input-placeholder {
+  opacity: 0.5;
+}
+
+.focus:focus::placeholder {
+  opacity: 0.5;
+}
+
 .fb-log-input {
   border: 1px solid #dddfe2;
   outline: none;
