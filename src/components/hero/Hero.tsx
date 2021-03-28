@@ -8,6 +8,7 @@ export const Hero: React.FC = () => {
   );
   const emailPhoneNumberRef = useRef<HTMLInputElement>(null);
   const [password, setPassword] = useState<any>("");
+  const [showModal, setShowModal] = useState<boolean>(false);
   const [passwordError, setPasswordError] = useState<boolean>(false);
   const passwordErrorRef = useRef<HTMLInputElement>(null);
   const renderLogIn = () => {
@@ -26,6 +27,11 @@ export const Hero: React.FC = () => {
   };
   return (
     <>
+      {showModal && (
+        <>
+          <p>Hello</p>
+        </>
+      )}
       <div className="container">
         <div className="row items-center justify-center h-screen">
           <div className="column position-gx responsive:info">
@@ -147,7 +153,12 @@ export const Hero: React.FC = () => {
                   </div>
                   <div className="fb-hr max-w-full"></div>
                   <div className="max-w-full text-center mt-5">
-                    <button className="fb-create-log">
+                    <button
+                      className="fb-create-log"
+                      onClick={() => {
+                        setShowModal(true);
+                      }}
+                    >
                       Create New Account
                     </button>
                   </div>
