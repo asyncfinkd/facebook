@@ -239,6 +239,67 @@ body {
   }
 }
 
+@media all and (max-width: 745px) {
+  .gender\:responsive {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .gender\:responsive span {
+    width: 100% !important;
+    margin-left: 0px;
+    margin-top: 10px;
+    position: relative;
+  }
+  .gender\:responsive input {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+  }
+  .signin\:responsive {
+    width: 100% !important;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .signin\:responsive ._responsive\:direction {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .signin\:responsive ._responsive\:direction input,
+  .signin\:responsive ._responsive\:direction select {
+    width: 100% !important;
+    margin-left: 0px;
+  }
+  .signin\:responsive ._responsive\:direction input:nth-child(2) {
+    margin-top: 10px;
+  }
+  .signin\:responsive ._responsive\:direction select:nth-child(2),
+  .signin\:responsive ._responsive\:direction select:nth-child(3) {
+    margin-bottom: 10px;
+  }
+  .input__max__scss {
+    width: 100% !important;
+  }
+}
+
 @media all and (max-width: 433px) {
   .input-error-icon {
     right: 20px;
