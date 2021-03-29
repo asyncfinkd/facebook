@@ -176,6 +176,17 @@ body {
   --bs-gutter-x: 0px !important;
 }
 
+.responsive\:tooltip::before {
+  content: "";
+  background-color: #be4b49;
+  transform: rotate(45deg);
+  width: 15px;
+  position: absolute;
+  right: -8px;
+  margin-top: 2px;
+  height: 15px;
+}
+
 @media all and (max-width: 1250px) {
   .responsive\:info {
     display: flex;

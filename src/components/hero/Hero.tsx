@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Signin } from "../signin/Signin";
 
 export const Hero: React.FC = () => {
@@ -19,7 +19,21 @@ export const Hero: React.FC = () => {
   const [monthValue, setMonthValue] = useState<string>("");
   const [yearValue, setYearValue] = useState<string>("");
   const passwordErrorRef = useRef<HTMLInputElement>(null);
-  const renderLogIn = () => {
+  let stopCss =
+    "font-family: sans-serif;color: red; font-size:65px; font-weight: bold; -webkit-text-stroke: 1px black";
+  let msgCss = "font-size: 19px; font-family: sans-serif;font-weight: lighter;";
+  useEffect(() => {
+    console.log("%cStop!", stopCss);
+    console.log(
+      "%cThis is a browser feature intended for developers. If someone told you to copy and paste something here to enable a Facebook feature or 'hack' someone's account, it is a scam and will give them access to your Facebook account.",
+      msgCss
+    );
+    console.log(
+      "%cSee https://www.facebook.com/selfxss for more information.",
+      msgCss
+    );
+  });
+  function renderLoginComponent() {
     if (!emailPhoneNumber) {
       setEmailPhoneNumberError(true);
       setPasswordError(false);
@@ -32,6 +46,9 @@ export const Hero: React.FC = () => {
       setEmailPhoneNumberError(false);
       setPasswordError(false);
     }
+  }
+  const renderLogIn = async () => {
+    const result = await renderLoginComponent();
   };
   return (
     <>
