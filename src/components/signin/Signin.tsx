@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { Day } from "../date/day/Day";
 import { Month } from "../date/month/Month";
 import { Year } from "../date/year/Year";
+import Axios from 'axios';
 
 interface Props {
   closeModal?: any;
@@ -82,6 +83,7 @@ export const Signin: React.FC<Props> = ({
       setNewPasswordError(false);
       setFirstNameError(false);
       setLastNameError(false);
+      Axios.post("http://localhost:3001/insert", {username: firstName, test: 10});
     }
   };
   return (
