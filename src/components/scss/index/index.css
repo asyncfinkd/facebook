@@ -310,6 +310,9 @@ body {
   .input__max__scss {
     width: 100% !important;
   }
+  .respo\:mt-3 {
+    margin-top: 1rem;
+  }
 }
 
 @media all and (max-width: 433px) {

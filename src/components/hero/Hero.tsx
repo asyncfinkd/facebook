@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Signin } from "../signin/Signin";
+import Axios from "axios";
 
 export const Hero: React.FC = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);

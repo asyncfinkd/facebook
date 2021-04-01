@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Day } from "../date/day/Day";
 import { Month } from "../date/month/Month";
 import { Year } from "../date/year/Year";
-import Axios from 'axios';
+import Axios from "axios";
 
 interface Props {
   closeModal?: any;
@@ -47,6 +47,7 @@ export const Signin: React.FC<Props> = ({
   const lastNameErrorRef = useRef<HTMLInputElement>(null);
   const numberEmailErrorRef = useRef<HTMLInputElement>(null);
   const newPasswordErrorRef = useRef<HTMLInputElement>(null);
+  const [success, setSuccess] = useState<Boolean>(false);
   const renderSignin = () => {
     if (!firstName) {
       setFirstNameError(true);
@@ -83,9 +84,17 @@ export const Signin: React.FC<Props> = ({
       setNewPasswordError(false);
       setFirstNameError(false);
       setLastNameError(false);
-      Axios.post("http://localhost:3001/insert", {username: firstName, test: 10});
+      setSuccess(true);
     }
+
+    Axios.post("http://localhost:3001/insert", {
+      username: firstName,
+      lastname: lastName,
+      email: emailMobile,
+      password: password,
+    });
   };
+
   return (
     <>
       <div
@@ -196,7 +205,7 @@ export const Signin: React.FC<Props> = ({
                         </div>
                       )}
                     </div>
-                    <div className="relative w-full mt-3">
+                    <div className="relative w-full respo:mt-3">
                       <input
                         ref={lastNameErrorRef}
                         type="text"
