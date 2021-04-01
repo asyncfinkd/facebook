@@ -65,17 +65,23 @@ export const Signin: React.FC<Props> = ({
       setFirstNameError(false);
       setNewPasswordError(false);
       setLastNameError(false);
-    } else if (!newPasswordError) {
+    } else if (!password) {
       setNumberEmailError(false);
       setNewPasswordError(true);
       setFirstNameError(false);
       newPasswordErrorRef.current?.focus();
       setLastNameError(false);
-    } else {
-      setLastNameError(false);
+    } else if (selectValue == "") {
+      console.log(selectValue);
+      setNumberEmailError(false);
       setNewPasswordError(false);
       setFirstNameError(false);
+      setLastNameError(false);
+    } else {
       setNumberEmailError(false);
+      setNewPasswordError(false);
+      setFirstNameError(false);
+      setLastNameError(false);
     }
   };
   return (
@@ -143,7 +149,7 @@ export const Signin: React.FC<Props> = ({
                   style={{ borderTop: "1px solid #dadde1", padding: "16px" }}
                 >
                   <div className="display:flex items-center max-w-full _responsive:direction">
-                    <div className="relative">
+                    <div className="relative w-full">
                       <input
                         type="text"
                         ref={firstNameErrorRef}
@@ -188,7 +194,7 @@ export const Signin: React.FC<Props> = ({
                         </div>
                       )}
                     </div>
-                    <div className="relative">
+                    <div className="relative w-full mt-3">
                       <input
                         ref={lastNameErrorRef}
                         type="text"
