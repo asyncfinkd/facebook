@@ -3,6 +3,7 @@ import { Day } from "../date/day/Day";
 import { Month } from "../date/month/Month";
 import { Year } from "../date/year/Year";
 import Axios from "axios";
+import { useHistory } from "react-router-dom";
 
 interface Props {
   closeModal?: any;
@@ -39,6 +40,7 @@ export const Signin: React.FC<Props> = ({
   yearValue,
   yearHandle,
 }) => {
+  const history = useHistory();
   const [firstNameError, setFirstNameError] = useState<Boolean>(false);
   const [lastNameError, setLastNameError] = useState<Boolean>(false);
   const [numberEmailError, setNumberEmailError] = useState<Boolean>(false);
@@ -87,11 +89,14 @@ export const Signin: React.FC<Props> = ({
       setSuccess(true);
     }
 
-    Axios.post("http://localhost:3001/insert", {
+    Axios.post("http://localhost:3001/authInsert/insertSign", {
       username: firstName,
       lastname: lastName,
       email: emailMobile,
       password: password,
+    }).then(() => {
+      localStorage.setItem("logged", "true");
+      window.location.reload();
     });
   };
 

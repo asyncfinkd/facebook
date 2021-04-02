@@ -35,7 +35,7 @@ export const Hero: React.FC = () => {
       "%cSee https://www.facebook.com/selfxss for more information.",
       msgCss
     );
-  });
+  }, []);
   function renderLoginComponent() {
     if (!email) {
       setEmailPhoneNumberError(true);
@@ -48,13 +48,10 @@ export const Hero: React.FC = () => {
     } else {
       setEmailPhoneNumberError(false);
       setPasswordError(false);
-      Axios.post("http://localhost:3001/read", {
+      Axios.post("http://localhost:3001/auth/readLog", {
         email,
         password,
       }).then((res) => {
-        console.log(res);
-        localStorage.setItem("logged", "true");
-        localStorage.setItem("user", JSON.stringify(res.data.user));
         if (res.data.message == "მომხმარებელი არ არსებობს") {
           setEmailPhoneNumberError(true);
           setPasswordError(false);
@@ -66,6 +63,8 @@ export const Hero: React.FC = () => {
         } else {
           setEmailPhoneNumberError(false);
           setPasswordError(false);
+          localStorage.setItem("logged", "true");
+          localStorage.setItem("user", JSON.stringify(res.data.user));
           history.push("/feed");
         }
       });

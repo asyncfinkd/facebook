@@ -8,7 +8,7 @@ export const Body: React.FC = () => {
   );
   return (
     <>
-      <div className="display:flex items-center justify-center h-screen flex-column">
+      <div className="display:flex items-center text-center justify-center h-screen flex-column">
         <p style={{ textTransform: "capitalize" }}>
           hello, ✋{" "}
           <span style={{ textTransform: "capitalize" }}>{user.username}</span>{" "}
