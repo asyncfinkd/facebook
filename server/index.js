@@ -39,6 +39,21 @@ app.post("/insert", async (req, res) => {
   }
 });
 
+let user = {};
+app.post("/read", async (req, res) => {
+  FacebookModel.findOne({ email: req.body.email }).then((result) => {
+    if (result == null) {
+      res.json({ message: "მომხმარებელი არ არსებობს", success: false });
+      console.log(result);
+    } else if (result.password == req.body.password) {
+      user = result;
+      res.json({ user: result, success: true });
+    } else {
+      res.json({ message: "პაროლი არასწორია", success: false });
+    }
+  });
+});
+
 // Run server
 app.listen(3001, () => {
   console.log("Server running on port 3001");

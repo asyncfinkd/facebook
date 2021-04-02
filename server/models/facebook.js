@@ -2,6 +2,7 @@
 const mongoose = require("mongoose");
 
 // db schema
+
 const FacebookSchema = new mongoose.Schema({
   username: {
     type: String,
