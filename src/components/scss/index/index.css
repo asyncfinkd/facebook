@@ -224,6 +224,23 @@ body {
   height: 15px;
 }
 
+.nav__animation {
+  -webkit-transition-duration: 100ms;
+          transition-duration: 100ms;
+}
+
+.nav__animation:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.create__animation {
+  cursor: pointer;
+}
+
+.create__animation:hover {
+  background-color: #525357e1;
+}
+
 @media all and (max-width: 1250px) {
   .responsive\:info {
     display: -webkit-box;
