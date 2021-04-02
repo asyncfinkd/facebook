@@ -20,6 +20,7 @@ export const Navbar: React.FC = () => {
             src="https://1000logos.net/wp-content/uploads/2016/11/Facebook-logo.png"
             alt="Facebook"
             style={{ height: "45px" }}
+            className="cursor-pointer"
           />
           <div>
             <input
@@ -50,7 +51,7 @@ export const Navbar: React.FC = () => {
           </div>
         </div>
         <div>
-          <span className="relative">
+          <span className="relative cursor-pointer">
             <svg
               viewBox="0 0 28 28"
               height="28"
@@ -73,7 +74,7 @@ export const Navbar: React.FC = () => {
             ></div>
           </span>
 
-          <span className="relative">
+          <span className="relative cursor-pointer">
             <svg
               viewBox="0 0 28 28"
               style={{
@@ -87,7 +88,7 @@ export const Navbar: React.FC = () => {
             </svg>
           </span>
 
-          <span className="relative">
+          <span className="relative cursor-pointer">
             <svg
               viewBox="0 0 28 28"
               style={{
@@ -101,7 +102,7 @@ export const Navbar: React.FC = () => {
             </svg>
           </span>
 
-          <span className="relative">
+          <span className="relative cursor-pointer">
             <svg
               viewBox="0 0 28 28"
               height="28"
@@ -133,7 +134,80 @@ export const Navbar: React.FC = () => {
             >
               {user.username}
             </span>
+            <div
+              style={{
+                backgroundColor: "rgba(255,255,255,0.1)",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "40px",
+                width: "40px",
+                cursor: "pointer",
+                textAlign: "center",
+                borderRadius: "50%",
+                marginLeft: "20px",
+              }}
+            >
+              <i
+                style={{
+                  backgroundPosition: "0 -695px",
+                  width: "20px",
+                  height: "20px",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "auto",
+                  backgroundImage:
+                    "url('https://static.xx.fbcdn.net/rsrc.php/v3/y1/r/LjG2LtfRqYT.png')",
+                  display: "flex",
+                  filter: "invert(90%)",
+                }}
+              ></i>
+            </div>
+            <div
+              style={{
+                backgroundColor: "rgba(255,255,255,0.1)",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "40px",
+                width: "40px",
+                cursor: "pointer",
+                textAlign: "center",
+                borderRadius: "50%",
+                marginLeft: "20px",
+              }}
+            >
+              <svg
+                viewBox="0 0 28 28"
+                style={{
+                  width: "20px",
+                  height: "20px",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "auto",
+                  backgroundImage:
+                    "url('https://static.xx.fbcdn.net/rsrc.php/v3/y1/r/LjG2LtfRqYT.png')",
+                  display: "flex",
+                  filter: "invert(90%)",
+                }}
+                height="20"
+                width="20"
+              >
+                <path d="M14 2.042c6.76 0 12 4.952 12 11.64S20.76 25.322 14 25.322a13.091 13.091 0 0 1-3.474-.461.956 .956 0 0 0-.641.047L7.5 25.959a.961.961 0 0 1-1.348-.849l-.065-2.134a.957.957 0 0 0-.322-.684A11.389 11.389 0 0 1 2 13.682C2 6.994 7.24 2.042 14 2.042ZM6.794 17.086a.57.57 0 0 0 .827.758l3.786-2.874a.722.722 0 0 1 .868 0l2.8 2.1a1.8 1.8 0 0 0 2.6-.481l3.525-5.592a.57.57 0 0 0-.827-.758l-3.786 2.874a.722.722 0 0 1-.868 0l-2.8-2.1a1.8 1.8 0 0 0-2.6.481Z"></path>
+              </svg>
+            </div>
           </div>
+          {/* <i
+            style={{
+              backgroundPosition: "0 -695px",
+              width: "20px",
+              height: "20px",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "auto",
+              backgroundImage:
+                "url('https://static.xx.fbcdn.net/rsrc.php/v3/y1/r/LjG2LtfRqYT.png')",
+              display: "flex",
+            }}
+          ></i> */}
+          {/* <svg viewBox="0 0 28 28" alt="" height="20" width="20"><path d="M14 2.042c6.76 0 12 4.952 12 11.64S20.76 25.322 14 25.322a13.091 13.091 0 0 1-3.474-.461.956 .956 0 0 0-.641.047L7.5 25.959a.961.961 0 0 1-1.348-.849l-.065-2.134a.957.957 0 0 0-.322-.684A11.389 11.389 0 0 1 2 13.682C2 6.994 7.24 2.042 14 2.042ZM6.794 17.086a.57.57 0 0 0 .827.758l3.786-2.874a.722.722 0 0 1 .868 0l2.8 2.1a1.8 1.8 0 0 0 2.6-.481l3.525-5.592a.57.57 0 0 0-.827-.758l-3.786 2.874a.722.722 0 0 1-.868 0l-2.8-2.1a1.8 1.8 0 0 0-2.6.481Z"></path></svg> */}
         </div>
       </div>
     </>
