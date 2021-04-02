@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { Day } from "../date/day/Day";
 import { Month } from "../date/month/Month";
 import { Year } from "../date/year/Year";

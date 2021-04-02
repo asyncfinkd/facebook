@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Signin } from "../signin/Signin";
 import Axios from "axios";
+import { useHistory } from "react-router-dom";
 
 export const Hero: React.FC = () => {
+  const history = useHistory();
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [emailPhoneNumber, setEmailPhoneNumber] = useState<any>("");
+  const [email, setEmail] = useState<any>("");
   const [emailPhoneNumberError, setEmailPhoneNumberError] = useState<boolean>(
     false
   );
@@ -35,7 +37,7 @@ export const Hero: React.FC = () => {
     );
   });
   function renderLoginComponent() {
-    if (!emailPhoneNumber) {
+    if (!email) {
       setEmailPhoneNumberError(true);
       setPasswordError(false);
       emailPhoneNumberRef.current?.focus();
@@ -46,11 +48,33 @@ export const Hero: React.FC = () => {
     } else {
       setEmailPhoneNumberError(false);
       setPasswordError(false);
+      Axios.post("http://localhost:3001/read", {
+        email,
+        password,
+      }).then((res) => {
+        console.log(res);
+        localStorage.setItem("logged", "true");
+        localStorage.setItem("user", JSON.stringify(res.data.user));
+        if (res.data.message == "მომხმარებელი არ არსებობს") {
+          setEmailPhoneNumberError(true);
+          setPasswordError(false);
+          emailPhoneNumberRef.current?.focus();
+        } else if (res.data.message == "პაროლი არასწორია") {
+          setEmailPhoneNumberError(false);
+          setPasswordError(true);
+          passwordErrorRef.current?.focus();
+        } else {
+          setEmailPhoneNumberError(false);
+          setPasswordError(false);
+          history.push("/feed");
+        }
+      });
     }
   }
   const renderLogIn = async () => {
     const result = await renderLoginComponent();
   };
+
   return (
     <>
       {showModal && (
@@ -119,9 +143,9 @@ export const Hero: React.FC = () => {
                       aria-label="Email address or phone number"
                       name="email[phoneNumber]"
                       ref={emailPhoneNumberRef}
-                      value={emailPhoneNumber}
+                      value={email}
                       onChange={(e) => {
-                        setEmailPhoneNumber(e.target.value);
+                        setEmail(e.target.value);
                       }}
                       className={
                         emailPhoneNumberError
