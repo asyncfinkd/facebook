@@ -1,9 +1,12 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Signin } from "../signin/Signin";
+import Axios from "axios";
+import { useHistory } from "react-router-dom";
 
 export const Hero: React.FC = () => {
+  const history = useHistory();
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [emailPhoneNumber, setEmailPhoneNumber] = useState<any>("");
+  const [email, setEmail] = useState<any>("");
   const [emailPhoneNumberError, setEmailPhoneNumberError] = useState<boolean>(
     false
   );
@@ -19,8 +22,22 @@ export const Hero: React.FC = () => {
   const [monthValue, setMonthValue] = useState<string>("");
   const [yearValue, setYearValue] = useState<string>("");
   const passwordErrorRef = useRef<HTMLInputElement>(null);
-  const renderLogIn = () => {
-    if (!emailPhoneNumber) {
+  let stopCss =
+    "font-family: sans-serif;color: red; font-size:65px; font-weight: bold; -webkit-text-stroke: 1px black";
+  let msgCss = "font-size: 19px; font-family: sans-serif;font-weight: lighter;";
+  useEffect(() => {
+    console.log("%cStop!", stopCss);
+    console.log(
+      "%cThis is a browser feature intended for developers. If someone told you to copy and paste something here to enable a Facebook feature or 'hack' someone's account, it is a scam and will give them access to your Facebook account.",
+      msgCss
+    );
+    console.log(
+      "%cSee https://www.facebook.com/selfxss for more information.",
+      msgCss
+    );
+  }, []);
+  function renderLoginComponent() {
+    if (!email) {
       setEmailPhoneNumberError(true);
       setPasswordError(false);
       emailPhoneNumberRef.current?.focus();
@@ -31,8 +48,32 @@ export const Hero: React.FC = () => {
     } else {
       setEmailPhoneNumberError(false);
       setPasswordError(false);
+      Axios.post("http://localhost:3001/auth/readLog", {
+        email,
+        password,
+      }).then((res) => {
+        if (res.data.message == "მომხმარებელი არ არსებობს") {
+          setEmailPhoneNumberError(true);
+          setPasswordError(false);
+          emailPhoneNumberRef.current?.focus();
+        } else if (res.data.message == "პაროლი არასწორია") {
+          setEmailPhoneNumberError(false);
+          setPasswordError(true);
+          passwordErrorRef.current?.focus();
+        } else {
+          setEmailPhoneNumberError(false);
+          setPasswordError(false);
+          localStorage.setItem("logged", "true");
+          localStorage.setItem("user", JSON.stringify(res.data.user));
+          history.push("/feed");
+        }
+      });
     }
+  }
+  const renderLogIn = async () => {
+    const result = await renderLoginComponent();
   };
+
   return (
     <>
       {showModal && (
@@ -101,9 +142,9 @@ export const Hero: React.FC = () => {
                       aria-label="Email address or phone number"
                       name="email[phoneNumber]"
                       ref={emailPhoneNumberRef}
-                      value={emailPhoneNumber}
+                      value={email}
                       onChange={(e) => {
-                        setEmailPhoneNumber(e.target.value);
+                        setEmail(e.target.value);
                       }}
                       className={
                         emailPhoneNumberError

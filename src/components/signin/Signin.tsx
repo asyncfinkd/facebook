@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { Day } from "../date/day/Day";
 import { Month } from "../date/month/Month";
 import { Year } from "../date/year/Year";
+import Axios from "axios";
+import { useHistory } from "react-router-dom";
 
 interface Props {
   closeModal?: any;
@@ -38,6 +40,66 @@ export const Signin: React.FC<Props> = ({
   yearValue,
   yearHandle,
 }) => {
+  const history = useHistory();
+  const [firstNameError, setFirstNameError] = useState<Boolean>(false);
+  const [lastNameError, setLastNameError] = useState<Boolean>(false);
+  const [numberEmailError, setNumberEmailError] = useState<Boolean>(false);
+  const [newPasswordError, setNewPasswordError] = useState<Boolean>(false);
+  const firstNameErrorRef = useRef<HTMLInputElement>(null);
+  const lastNameErrorRef = useRef<HTMLInputElement>(null);
+  const numberEmailErrorRef = useRef<HTMLInputElement>(null);
+  const newPasswordErrorRef = useRef<HTMLInputElement>(null);
+  const [success, setSuccess] = useState<Boolean>(false);
+  const renderSignin = () => {
+    if (!firstName) {
+      setFirstNameError(true);
+      setLastNameError(false);
+      setNewPasswordError(false);
+      setNumberEmailError(false);
+      firstNameErrorRef.current?.focus();
+    } else if (!lastName) {
+      setNewPasswordError(false);
+      setFirstNameError(false);
+      setLastNameError(true);
+      setNumberEmailError(false);
+      lastNameErrorRef.current?.focus();
+    } else if (!emailMobile) {
+      numberEmailErrorRef.current?.focus();
+      setNumberEmailError(true);
+      setFirstNameError(false);
+      setNewPasswordError(false);
+      setLastNameError(false);
+    } else if (!password) {
+      setNumberEmailError(false);
+      setNewPasswordError(true);
+      setFirstNameError(false);
+      newPasswordErrorRef.current?.focus();
+      setLastNameError(false);
+    } else if (selectValue == "") {
+      console.log(selectValue);
+      setNumberEmailError(false);
+      setNewPasswordError(false);
+      setFirstNameError(false);
+      setLastNameError(false);
+    } else {
+      setNumberEmailError(false);
+      setNewPasswordError(false);
+      setFirstNameError(false);
+      setLastNameError(false);
+      setSuccess(true);
+    }
+
+    Axios.post("http://localhost:3001/authInsert/insertSign", {
+      username: firstName,
+      lastname: lastName,
+      email: emailMobile,
+      password: password,
+    }).then(() => {
+      localStorage.setItem("logged", "true");
+      window.location.reload();
+    });
+  };
+
   return (
     <>
       <div
@@ -93,91 +155,210 @@ export const Signin: React.FC<Props> = ({
                   It’s quick and easy.
                 </div>
               </div>
-              <form className="max-w-full">
+              <form
+                className="max-w-full"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                }}
+              >
                 <div
                   style={{ borderTop: "1px solid #dadde1", padding: "16px" }}
                 >
                   <div className="display:flex items-center max-w-full _responsive:direction">
-                    <input
-                      type="text"
-                      style={{
-                        width: "190px",
-                        padding: "9px",
-                        outline: "none",
-                        color: "#1c1e21",
-                        fontSize: "15px",
-                        backgroundColor: "#f5f6f7",
-                        borderRadius: "5px",
-                        border: "1px solid #ccd0d5",
-                      }}
-                      className="focus max-w-full"
-                      placeholder="First name"
-                      aria-label="First name"
-                      value={firstName}
-                      onChange={firstNameHandle}
-                    />
-                    <input
-                      type="text"
-                      style={{
-                        width: "190px",
-                        padding: "9px",
-                        outline: "none",
-                        color: "#1c1e21",
-                        fontSize: "15px",
-                        backgroundColor: "#f5f6f7",
-                        borderRadius: "5px",
-                        border: "1px solid #ccd0d5",
-                      }}
-                      className="focus ml-3 max-w-full"
-                      placeholder="Last name"
-                      aria-label="Last name"
-                      value={lastName}
-                      onChange={lastNameHandle}
-                    />
+                    <div className="relative w-full">
+                      <input
+                        type="text"
+                        ref={firstNameErrorRef}
+                        style={{
+                          width: "190px",
+                          padding: "9px",
+                          outline: "none",
+                          color: "#1c1e21",
+                          fontSize: "15px",
+                          backgroundColor: "#f5f6f7",
+                          borderRadius: "5px",
+                          border: "1px solid #ccd0d5",
+                        }}
+                        className="focus max-w-full"
+                        placeholder="First name"
+                        aria-label="First name"
+                        value={firstName}
+                        onChange={firstNameHandle}
+                      />
+                      {firstNameError && (
+                        <div
+                          className="responsive:tooltip"
+                          style={{
+                            position: "absolute",
+                            right: "210px",
+                            width: "135px",
+                            boxShadow:
+                              " 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35)",
+                            borderRadius: "2px",
+                            backgroundColor: "#be4b49",
+                            color: "#fff",
+                            paddingTop: "10px",
+                            paddingBottom: "10px",
+                            maxWidth: "100%",
+                            paddingLeft: "10px",
+                            paddingRight: "10px",
+                            fontSize: "13px",
+                            top: "0",
+                          }}
+                        >
+                          <span>What's your name?</span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="relative w-full respo:mt-3">
+                      <input
+                        ref={lastNameErrorRef}
+                        type="text"
+                        style={{
+                          width: "190px",
+                          padding: "9px",
+                          outline: "none",
+                          color: "#1c1e21",
+                          fontSize: "15px",
+                          backgroundColor: "#f5f6f7",
+                          borderRadius: "5px",
+                          border: "1px solid #ccd0d5",
+                        }}
+                        className="focus ml-3 max-w-full"
+                        placeholder="Last name"
+                        aria-label="Last name"
+                        value={lastName}
+                        onChange={lastNameHandle}
+                      />
+                      {lastNameError && (
+                        <div
+                          className="responsive:tooltip"
+                          style={{
+                            position: "absolute",
+                            width: "135px",
+                            left: "-140px",
+                            boxShadow:
+                              " 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35)",
+                            borderRadius: "2px",
+                            backgroundColor: "#be4b49",
+                            color: "#fff",
+                            paddingTop: "10px",
+                            paddingBottom: "10px",
+                            maxWidth: "100%",
+                            paddingLeft: "10px",
+                            paddingRight: "10px",
+                            fontSize: "13px",
+                            top: "0",
+                          }}
+                        >
+                          <span>What's your name?</span>
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <div>
-                    <input
-                      type="text"
-                      className="focus input__max__scss"
-                      placeholder="Mobile number or email"
-                      style={{
-                        padding: "11px",
-                        fontSize: "15px",
-                        marginTop: "10px",
-                        outline: "none",
-                        maxWidth: "100%",
-                        width: "392px",
-                        lineHeight: "16px",
-                        color: "#1c1e21",
-                        border: "1px solid #ccd0d5",
-                        backgroundColor: "#f5f6f7",
-                        borderRadius: "5px",
-                      }}
-                      aria-label="Mobile Number or email"
-                      value={emailMobile}
-                      onChange={emailMobileHandle}
-                    />
-                    <input
-                      type="password"
-                      className="focus input__max__scss"
-                      placeholder="New password"
-                      style={{
-                        padding: "11px",
-                        fontSize: "15px",
-                        marginTop: "10px",
-                        outline: "none",
-                        maxWidth: "100%",
-                        width: "392px",
-                        lineHeight: "16px",
-                        color: "#1c1e21",
-                        border: "1px solid #ccd0d5",
-                        backgroundColor: "#f5f6f7",
-                        borderRadius: "5px",
-                      }}
-                      aria-label="New password"
-                      value={password}
-                      onChange={passwordHandle}
-                    />
+                    <div className="relative">
+                      <input
+                        type="text"
+                        className="focus input__max__scss"
+                        placeholder="Mobile number or email"
+                        ref={numberEmailErrorRef}
+                        style={{
+                          padding: "11px",
+                          fontSize: "15px",
+                          marginTop: "10px",
+                          outline: "none",
+                          maxWidth: "100%",
+                          width: "392px",
+                          lineHeight: "16px",
+                          color: "#1c1e21",
+                          border: "1px solid #ccd0d5",
+                          backgroundColor: "#f5f6f7",
+                          borderRadius: "5px",
+                        }}
+                        aria-label="Mobile Number or email"
+                        value={emailMobile}
+                        onChange={emailMobileHandle}
+                      />
+                      {numberEmailError && (
+                        <div
+                          className="responsive:tooltip"
+                          style={{
+                            position: "absolute",
+                            width: "135px",
+                            left: "-150px",
+                            boxShadow:
+                              " 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35)",
+                            borderRadius: "2px",
+                            backgroundColor: "#be4b49",
+                            color: "#fff",
+                            paddingTop: "10px",
+                            paddingBottom: "10px",
+                            maxWidth: "100%",
+                            paddingLeft: "10px",
+                            paddingRight: "10px",
+                            fontSize: "13px",
+                            top: "0",
+                          }}
+                        >
+                          <span>
+                            You'll use this when you log in and if you ever need
+                            to reset your password.
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="relative">
+                      <input
+                        type="password"
+                        className="focus input__max__scss"
+                        ref={newPasswordErrorRef}
+                        placeholder="New password"
+                        style={{
+                          padding: "11px",
+                          fontSize: "15px",
+                          marginTop: "10px",
+                          outline: "none",
+                          maxWidth: "100%",
+                          width: "392px",
+                          lineHeight: "16px",
+                          color: "#1c1e21",
+                          border: "1px solid #ccd0d5",
+                          backgroundColor: "#f5f6f7",
+                          borderRadius: "5px",
+                        }}
+                        aria-label="New password"
+                        value={password}
+                        onChange={passwordHandle}
+                      />
+                      {newPasswordError && (
+                        <div
+                          className="responsive:tooltip"
+                          style={{
+                            position: "absolute",
+                            width: "135px",
+                            left: "-150px",
+                            boxShadow:
+                              " 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35)",
+                            borderRadius: "2px",
+                            backgroundColor: "#be4b49",
+                            color: "#fff",
+                            paddingTop: "10px",
+                            paddingBottom: "10px",
+                            maxWidth: "100%",
+                            paddingLeft: "10px",
+                            paddingRight: "10px",
+                            fontSize: "13px",
+                            top: "0",
+                          }}
+                        >
+                          <span>
+                            Enter a combination of at least six numbers, letters
+                            and punctuation marks (such as ! and &).
+                          </span>
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <div
                     className="birthday-scss max-w-full _responsive:direction"
@@ -345,7 +526,7 @@ export const Signin: React.FC<Props> = ({
                   </div>
                   <div className="max-w-full" style={{ textAlign: "center" }}>
                     <button
-                      type="button"
+                      type="submit"
                       aria-label="Sign Up"
                       style={{
                         backgroundColor: "#00a400",
@@ -366,6 +547,7 @@ export const Signin: React.FC<Props> = ({
                         outline: "none",
                       }}
                       className="_hover-scss max-w-full"
+                      onClick={() => renderSignin()}
                     >
                       Sign Up
                     </button>

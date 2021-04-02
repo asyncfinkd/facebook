@@ -31,7 +31,7 @@ export const Day: React.FC<Props> = ({ selectValue, handleSelect }) => {
         id="day"
         title="Day"
       >
-        <option value="0">Day</option>
+        <option value="">Day</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>

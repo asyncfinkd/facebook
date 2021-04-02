@@ -18,4 +18,4 @@
 
 Facebook is an open source where you can contribute at any time. For this we need to get acquainted first with our policies. 
 
-Please read [CONTRIBUTING.md](https://github.com/asyncfinkd/facebook) for details on this project.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on this project.
