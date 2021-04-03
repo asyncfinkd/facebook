@@ -76,183 +76,190 @@ export const Hero: React.FC = () => {
 
   return (
     <>
-      {showModal && (
+      {localStorage.getItem("logged") === "true" ? (
+        history.push("/feed")
+      ) : (
         <>
-          <Signin
-            closeModal={() => {
-              setShowModal(false);
-            }}
-            firstName={firstName}
-            lastName={lastName}
-            emailMobile={emailMobile}
-            password={newPassword}
-            firstNameHandle={(e: any) => {
-              setFirstName(e.target.value);
-            }}
-            lastNameHandle={(e: any) => {
-              setLastName(e.target.value);
-            }}
-            emailMobileHandle={(e: any) => {
-              setEmailMobile(e.target.value);
-            }}
-            passwordHandle={(e: any) => {
-              setNewPassword(e.target.value);
-            }}
-            selectValue={dayValue}
-            selectHandle={(e: any) => {
-              setDayValue(e.target.value);
-            }}
-            monthValue={monthValue}
-            monthHandle={(e: any) => {
-              setMonthValue(e.target.value);
-            }}
-            yearValue={yearValue}
-            yearHandle={(e: any) => {
-              setYearValue(e.target.value);
-            }}
-          />
-        </>
-      )}
-      <div className="container">
-        <div className="row items-center justify-center h-screen">
-          <div className="column position-gx responsive:info">
-            <img
-              src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg"
-              alt="Facebook"
-              className="h-106px -m-7 max-w-full"
-            />
-            <h2 className="text-2xl ptb-5 max-w-full w-500px text-28px">
-              Facebook helps you connect and share with the people in your life.
-            </h2>
-          </div>
-          <div className="column-5 mr-12 display:flex items-center justify-center flex-column responsive:validation">
-            <div className="fb-log-container max-w-full">
-              <div className="display:flex justify-center items-center flex-column max-w-full">
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                  }}
-                  style={{ padding: "0 10px" }}
-                  className="max-w-full form:res display:flex justify-center items-center flex-column"
-                >
-                  <div className="relative display:flex justify-center items-center flex-column max-w-full">
-                    <input
-                      type="text"
-                      autoFocus
-                      aria-label="Email address or phone number"
-                      name="email[phoneNumber]"
-                      ref={emailPhoneNumberRef}
-                      value={email}
-                      onChange={(e) => {
-                        setEmail(e.target.value);
+          {showModal && (
+            <>
+              <Signin
+                closeModal={() => {
+                  setShowModal(false);
+                }}
+                firstName={firstName}
+                lastName={lastName}
+                emailMobile={emailMobile}
+                password={newPassword}
+                firstNameHandle={(e: any) => {
+                  setFirstName(e.target.value);
+                }}
+                lastNameHandle={(e: any) => {
+                  setLastName(e.target.value);
+                }}
+                emailMobileHandle={(e: any) => {
+                  setEmailMobile(e.target.value);
+                }}
+                passwordHandle={(e: any) => {
+                  setNewPassword(e.target.value);
+                }}
+                selectValue={dayValue}
+                selectHandle={(e: any) => {
+                  setDayValue(e.target.value);
+                }}
+                monthValue={monthValue}
+                monthHandle={(e: any) => {
+                  setMonthValue(e.target.value);
+                }}
+                yearValue={yearValue}
+                yearHandle={(e: any) => {
+                  setYearValue(e.target.value);
+                }}
+              />
+            </>
+          )}
+          <div className="container">
+            <div className="row items-center justify-center h-screen">
+              <div className="column position-gx responsive:info">
+                <img
+                  src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg"
+                  alt="Facebook"
+                  className="h-106px -m-7 max-w-full"
+                />
+                <h2 className="text-2xl ptb-5 max-w-full w-500px text-28px">
+                  Facebook helps you connect and share with the people in your
+                  life.
+                </h2>
+              </div>
+              <div className="column-5 mr-12 display:flex items-center justify-center flex-column responsive:validation">
+                <div className="fb-log-container max-w-full">
+                  <div className="display:flex justify-center items-center flex-column max-w-full">
+                    <form
+                      onSubmit={(e) => {
+                        e.preventDefault();
                       }}
-                      className={
-                        emailPhoneNumberError
-                          ? "fb-log-input fb-input-error max-w-full"
-                          : "fb-log-input max-w-full"
-                      }
-                      placeholder="Email address or phone number"
-                    />
-                    {emailPhoneNumberError && (
-                      <>
-                        <i className="input-error-icon absolute"></i>
-                        <div className="text-left fb-text-error ml-2 mr-2">
-                          The email address or mobile number you entered isn't
-                          connected to an account.{" "}
-                          <strong>Find your account and log in.</strong>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                  <div className="relative mt-3 display:flex items-center justify-center flex-column max-w-full">
-                    <input
-                      type={showPassword ? "text" : "password"}
-                      className={
-                        passwordError
-                          ? "fb-log-input fb-input-error max-w-full"
-                          : "fb-log-input max-w-full"
-                      }
-                      value={password}
-                      aria-label="Password"
-                      name="Password"
-                      ref={passwordErrorRef}
-                      onChange={(e) => {
-                        setPassword(e.target.value);
-                      }}
-                      placeholder="Password"
-                    />
-                    {passwordError && (
-                      <>
-                        <i className="input-error-icon absolute"></i>
-                        <div className="text-left fb-text-error ml-2 mr-2">
-                          The password that you've entered is incorrect.{" "}
-                          <strong style={{ cursor: "pointer" }}>
-                            Forgotten password?
-                          </strong>
-                        </div>
-                      </>
-                    )}
-                    {password.length > 0 && (
-                      <div
-                        className={
-                          passwordError
-                            ? "none"
-                            : "w-7 h-7 absolute max-border-radius right-1 password-icon-container"
-                        }
-                        style={{ bottom: "9px" }}
-                        onClick={() => {
-                          setShowPassword(!showPassword);
-                        }}
-                      >
-                        <div
+                      style={{ padding: "0 10px" }}
+                      className="max-w-full form:res display:flex justify-center items-center flex-column"
+                    >
+                      <div className="relative display:flex justify-center items-center flex-column max-w-full">
+                        <input
+                          type="text"
+                          autoFocus
+                          aria-label="Email address or phone number"
+                          name="email[phoneNumber]"
+                          ref={emailPhoneNumberRef}
+                          value={email}
+                          onChange={(e) => {
+                            setEmail(e.target.value);
+                          }}
                           className={
-                            showPassword
-                              ? "password-close-icon-container w-4 h-4 p-3"
-                              : "password-icon w-4 h-4 p-3"
+                            emailPhoneNumberError
+                              ? "fb-log-input fb-input-error max-w-full"
+                              : "fb-log-input max-w-full"
                           }
-                          style={{ bottom: "6px", right: "6px" }}
-                        ></div>
+                          placeholder="Email address or phone number"
+                        />
+                        {emailPhoneNumberError && (
+                          <>
+                            <i className="input-error-icon absolute"></i>
+                            <div className="text-left fb-text-error ml-2 mr-2">
+                              The email address or mobile number you entered
+                              isn't connected to an account.{" "}
+                              <strong>Find your account and log in.</strong>
+                            </div>
+                          </>
+                        )}
                       </div>
-                    )}
+                      <div className="relative mt-3 display:flex items-center justify-center flex-column max-w-full">
+                        <input
+                          type={showPassword ? "text" : "password"}
+                          className={
+                            passwordError
+                              ? "fb-log-input fb-input-error max-w-full"
+                              : "fb-log-input max-w-full"
+                          }
+                          value={password}
+                          aria-label="Password"
+                          name="Password"
+                          ref={passwordErrorRef}
+                          onChange={(e) => {
+                            setPassword(e.target.value);
+                          }}
+                          placeholder="Password"
+                        />
+                        {passwordError && (
+                          <>
+                            <i className="input-error-icon absolute"></i>
+                            <div className="text-left fb-text-error ml-2 mr-2">
+                              The password that you've entered is incorrect.{" "}
+                              <strong style={{ cursor: "pointer" }}>
+                                Forgotten password?
+                              </strong>
+                            </div>
+                          </>
+                        )}
+                        {password.length > 0 && (
+                          <div
+                            className={
+                              passwordError
+                                ? "none"
+                                : "w-7 h-7 absolute max-border-radius right-1 password-icon-container"
+                            }
+                            style={{ bottom: "9px" }}
+                            onClick={() => {
+                              setShowPassword(!showPassword);
+                            }}
+                          >
+                            <div
+                              className={
+                                showPassword
+                                  ? "password-close-icon-container w-4 h-4 p-3"
+                                  : "password-icon w-4 h-4 p-3"
+                              }
+                              style={{ bottom: "6px", right: "6px" }}
+                            ></div>
+                          </div>
+                        )}
+                      </div>
+                      <div className="max-w-full">
+                        <button
+                          className="fb-button-log mt-4 max-w-full"
+                          type="submit"
+                          onClick={() => renderLogIn()}
+                        >
+                          Log In
+                        </button>
+                      </div>
+                      <div className="max-w-full mt-4 text-center">
+                        <a
+                          href="https://www.facebook.com/recover/initiate/?ars=facebook_login&amp;privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjE2ODQ0MTk3LCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D"
+                          className="fb-forgot-log"
+                        >
+                          Forgotten password?
+                        </a>
+                      </div>
+                      <div className="fb-hr max-w-full"></div>
+                      <div className="max-w-full text-center mt-5">
+                        <button
+                          className="fb-create-log"
+                          onClick={() => {
+                            setShowModal(true);
+                          }}
+                        >
+                          Create New Account
+                        </button>
+                      </div>
+                    </form>
                   </div>
-                  <div className="max-w-full">
-                    <button
-                      className="fb-button-log mt-4 max-w-full"
-                      type="submit"
-                      onClick={() => renderLogIn()}
-                    >
-                      Log In
-                    </button>
-                  </div>
-                  <div className="max-w-full mt-4 text-center">
-                    <a
-                      href="https://www.facebook.com/recover/initiate/?ars=facebook_login&amp;privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjE2ODQ0MTk3LCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D"
-                      className="fb-forgot-log"
-                    >
-                      Forgotten password?
-                    </a>
-                  </div>
-                  <div className="fb-hr max-w-full"></div>
-                  <div className="max-w-full text-center mt-5">
-                    <button
-                      className="fb-create-log"
-                      onClick={() => {
-                        setShowModal(true);
-                      }}
-                    >
-                      Create New Account
-                    </button>
-                  </div>
-                </form>
+                </div>
+                <div className="mt-6 fb-group-log text-center forgotPassword:responsive">
+                  <strong style={{ cursor: "pointer" }}>Create a Page</strong>{" "}
+                  for a celebrity, band or business.
+                </div>
               </div>
             </div>
-            <div className="mt-6 fb-group-log text-center forgotPassword:responsive">
-              <strong style={{ cursor: "pointer" }}>Create a Page</strong> for a
-              celebrity, band or business.
-            </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </>
   );
 };
