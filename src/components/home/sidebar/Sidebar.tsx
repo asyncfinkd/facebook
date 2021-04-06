@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import {
+  SidebarDataStructure,
+  SeeMoreSidebarStructure,
+} from "../../../data/SidebarData";
 
 export const Sidebar: React.FC = () => {
   const [user, setUser] = useState<any>(
@@ -17,6 +21,7 @@ export const Sidebar: React.FC = () => {
           overflowY: "scroll",
           height: "89%",
         }}
+        id="scroll-bar"
       >
         <Link
           to="/"
@@ -55,779 +60,148 @@ export const Sidebar: React.FC = () => {
             </span>
           </div>
         </Link>
-        <Link
-          to="/"
-          style={{ textDecoration: "none", textDecorationLine: "none" }}
-        >
-          <div
-            className="create__animation"
-            style={{
-              padding: "8px 5px",
-              borderRadius: "10px",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src="https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/5rR6LRpNc5u.png"
-              style={{
-                width: "28px",
-                marginLeft: "2px",
-                height: "28px",
-                borderRadius: "50%",
-              }}
-              alt=""
-            />
-            <span
-              style={{
-                textTransform: "capitalize",
-                color: "#E4E6EB",
-                fontSize: ".9375rem",
-                marginLeft: "9px",
-                textDecoration: "none",
-                textDecorationLine: "none",
-              }}
-            >
-              COVID-19 Information Centre
-            </span>
-          </div>
-        </Link>
-        <Link
-          to="/"
-          style={{ textDecoration: "none", textDecorationLine: "none" }}
-        >
-          <div
-            className="create__animation"
-            style={{
-              padding: "8px 5px",
-              borderRadius: "10px",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src="https://static.xx.fbcdn.net/rsrc.php/v3/y8/r/S0U5ECzYUSu.png"
-              style={{
-                width: "28px",
-                marginLeft: "2px",
-                height: "28px",
-                borderRadius: "50%",
-              }}
-              alt=""
-            />
-            <span
-              style={{
-                textTransform: "capitalize",
-                color: "#E4E6EB",
-                fontSize: ".9375rem",
-                marginLeft: "9px",
-                textDecoration: "none",
-                textDecorationLine: "none",
-              }}
-            >
-              Friends
-            </span>
-          </div>
-        </Link>
-        <Link
-          to="/"
-          style={{ textDecoration: "none", textDecorationLine: "none" }}
-        >
-          <div
-            className="create__animation"
-            style={{
-              padding: "8px 5px",
-              borderRadius: "10px",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src="https://static.xx.fbcdn.net/rsrc.php/v3/y5/r/duk32h44Y31.png"
-              style={{
-                width: "28px",
-                marginLeft: "2px",
-                height: "28px",
-                borderRadius: "50%",
-              }}
-              alt=""
-            />
-            <span
-              style={{
-                textTransform: "capitalize",
-                color: "#E4E6EB",
-                fontSize: ".9375rem",
-                marginLeft: "9px",
-                textDecoration: "none",
-                textDecorationLine: "none",
-              }}
-            >
-              Watch
-            </span>
-          </div>
-        </Link>
-        <Link
-          to="/"
-          style={{ textDecoration: "none", textDecorationLine: "none" }}
-        >
-          <div
-            className="create__animation"
-            style={{
-              padding: "8px 5px",
-              borderRadius: "10px",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src="https://static.xx.fbcdn.net/rsrc.php/v3/yH/r/kyCAf2jbZvF.png"
-              style={{
-                width: "28px",
-                marginLeft: "2px",
-                height: "28px",
-                borderRadius: "50%",
-              }}
-              alt=""
-            />
-            <span
-              style={{
-                textTransform: "capitalize",
-                color: "#E4E6EB",
-                fontSize: ".9375rem",
-                marginLeft: "9px",
-                textDecoration: "none",
-                textDecorationLine: "none",
-              }}
-            >
-              Pages
-            </span>
-          </div>
-        </Link>
-        <Link
-          to="/"
-          style={{ textDecoration: "none", textDecorationLine: "none" }}
-        >
-          <div
-            className="create__animation"
-            style={{
-              padding: "8px 5px",
-              borderRadius: "10px",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src="https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/w-vdKCGzCy1.png"
-              style={{
-                width: "28px",
-                marginLeft: "2px",
-                height: "28px",
-                borderRadius: "50%",
-              }}
-              alt=""
-            />
-            <span
-              style={{
-                textTransform: "capitalize",
-                color: "#E4E6EB",
-                fontSize: ".9375rem",
-                marginLeft: "9px",
-                textDecoration: "none",
-                textDecorationLine: "none",
-              }}
-            >
-              Most recent
-            </span>
-          </div>
-        </Link>
-        <Link
-          to="/"
-          style={{ textDecoration: "none", textDecorationLine: "none" }}
-        >
-          <div
-            className="create__animation"
-            style={{
-              padding: "8px 5px",
-              borderRadius: "10px",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src="https://static.xx.fbcdn.net/rsrc.php/v3/yK/r/mAnT0r8GSOm.png"
-              style={{
-                width: "28px",
-                marginLeft: "2px",
-                height: "28px",
-                borderRadius: "50%",
-              }}
-              alt=""
-            />
-            <span
-              style={{
-                textTransform: "capitalize",
-                color: "#E4E6EB",
-                fontSize: ".9375rem",
-                marginLeft: "9px",
-                textDecoration: "none",
-                textDecorationLine: "none",
-              }}
-            >
-              Favourites
-            </span>
-          </div>
-        </Link>
-        <Link
-          to="/"
-          style={{ textDecoration: "none", textDecorationLine: "none" }}
-        >
-          <div
-            className="create__animation"
-            style={{
-              padding: "8px 5px",
-              borderRadius: "10px",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src="https://static.xx.fbcdn.net/rsrc.php/v3/y5/r/PrjLkDYpYbH.png"
-              style={{
-                width: "28px",
-                marginLeft: "2px",
-                height: "28px",
-                borderRadius: "50%",
-              }}
-              alt=""
-            />
-            <span
-              style={{
-                textTransform: "capitalize",
-                color: "#E4E6EB",
-                fontSize: ".9375rem",
-                marginLeft: "9px",
-                textDecoration: "none",
-                textDecorationLine: "none",
-              }}
-            >
-              Groups
-            </span>
-          </div>
-        </Link>
-        <Link
-          to="/"
-          style={{ textDecoration: "none", textDecorationLine: "none" }}
-        >
-          <div
-            className="create__animation"
-            style={{
-              padding: "8px 5px",
-              borderRadius: "10px",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src="https://static.xx.fbcdn.net/rsrc.php/v3/ys/r/8wTx0Eu2vRq.png"
-              style={{
-                width: "28px",
-                marginLeft: "2px",
-                height: "28px",
-                borderRadius: "50%",
-              }}
-              alt=""
-            />
-            <span
-              style={{
-                textTransform: "capitalize",
-                color: "#E4E6EB",
-                fontSize: ".9375rem",
-                marginLeft: "9px",
-                textDecoration: "none",
-                textDecorationLine: "none",
-              }}
-            >
-              Events
-            </span>
-          </div>
-        </Link>
+        {SidebarDataStructure.map((item) => {
+          return (
+            <>
+              <Link
+                to={item.route}
+                style={{ textDecoration: "none", textDecorationLine: "none" }}
+              >
+                <div
+                  className="create__animation"
+                  style={{
+                    padding: "8px 5px",
+                    borderRadius: "10px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <img
+                    src={item.image}
+                    style={{
+                      width: "28px",
+                      marginLeft: "2px",
+                      height: "28px",
+                      borderRadius: "50%",
+                    }}
+                    alt=""
+                  />
+                  <span
+                    style={{
+                      textTransform: "capitalize",
+                      color: "#E4E6EB",
+                      fontSize: ".9375rem",
+                      marginLeft: "9px",
+                      textDecoration: "none",
+                      textDecorationLine: "none",
+                    }}
+                  >
+                    {item.title}
+                  </span>
+                </div>
+              </Link>
+            </>
+          );
+        })}
         {seeMore ? (
           <>
-            <Link
-              to="/"
-              style={{ textDecoration: "none", textDecorationLine: "none" }}
+            {SeeMoreSidebarStructure.map((item) => {
+              return (
+                <>
+                  <Link
+                    to={item.route}
+                    style={{
+                      textDecoration: "none",
+                      textDecorationLine: "none",
+                    }}
+                  >
+                    <div
+                      className="create__animation"
+                      style={{
+                        padding: "8px 5px",
+                        borderRadius: "10px",
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img
+                        src={item.image}
+                        style={{
+                          width: "28px",
+                          marginLeft: "2px",
+                          height: "28px",
+                          borderRadius: "50%",
+                        }}
+                        alt=""
+                      />
+                      <span
+                        style={{
+                          textTransform: "capitalize",
+                          color: "#E4E6EB",
+                          fontSize: ".9375rem",
+                          marginLeft: "9px",
+                          textDecoration: "none",
+                          textDecorationLine: "none",
+                        }}
+                      >
+                        {item.title}
+                      </span>
+                    </div>
+                  </Link>
+                </>
+              );
+            })}
+            <div
+              className="create__animation"
+              style={{
+                padding: "8px 5px",
+                borderRadius: "10px",
+                display: "flex",
+                alignItems: "center",
+              }}
+              onClick={() => {
+                setSeeMore(false);
+              }}
             >
               <div
-                className="create__animation"
                 style={{
-                  padding: "8px 5px",
-                  borderRadius: "10px",
+                  borderRadius: "50%",
                   display: "flex",
                   alignItems: "center",
+                  width: "28px",
+                  height: "28px",
+                  backgroundColor: "rgba(255,255,255,.1)",
                 }}
               >
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/CwKNCefmHON.png"
+                <i
                   style={{
-                    width: "28px",
-                    marginLeft: "2px",
-                    height: "28px",
-                    borderRadius: "50%",
+                    backgroundPosition: "0 -359px",
+                    backgroundImage:
+                      "url('https://static.xx.fbcdn.net/rsrc.php/v3/yX/r/sjwIelw3nbI.png')",
+                    width: "20px",
+                    height: "20px",
+                    display: "inline-block",
+                    backgroundSize: "auto",
+                    backgroundRepeat: "no-repeat",
+                    textAlign: "center",
+                    margin: "auto",
+                    filter: "invert(80%)",
+                    transform: "rotate(180deg)",
                   }}
-                  alt=""
-                />
-                <span
-                  style={{
-                    textTransform: "capitalize",
-                    color: "#E4E6EB",
-                    fontSize: ".9375rem",
-                    marginLeft: "9px",
-                    textDecoration: "none",
-                    textDecorationLine: "none",
-                  }}
-                >
-                  Ad Centre
-                </span>
+                ></i>
               </div>
-            </Link>
-            <Link
-              to="/"
-              style={{ textDecoration: "none", textDecorationLine: "none" }}
-            >
-              <div
-                className="create__animation"
+              <span
                 style={{
-                  padding: "8px 5px",
-                  borderRadius: "10px",
-                  display: "flex",
-                  alignItems: "center",
+                  color: "#E4E6EB",
+                  fontSize: ".9375rem",
+                  marginLeft: "9px",
+                  textDecoration: "none",
+                  textDecorationLine: "none",
                 }}
               >
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/DHBHg9MEeSC.png"
-                  style={{
-                    width: "28px",
-                    marginLeft: "2px",
-                    height: "28px",
-                    borderRadius: "50%",
-                  }}
-                  alt=""
-                />
-                <span
-                  style={{
-                    textTransform: "capitalize",
-                    color: "#E4E6EB",
-                    fontSize: ".9375rem",
-                    marginLeft: "9px",
-                    textDecoration: "none",
-                    textDecorationLine: "none",
-                  }}
-                >
-                  Ads Manager
-                </span>
-              </div>
-            </Link>
-            <Link
-              to="/"
-              style={{ textDecoration: "none", textDecorationLine: "none" }}
-            >
-              <div
-                className="create__animation"
-                style={{
-                  padding: "8px 5px",
-                  borderRadius: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/yN/r/9s7nhm949yb.png"
-                  style={{
-                    width: "28px",
-                    marginLeft: "2px",
-                    height: "28px",
-                    borderRadius: "50%",
-                  }}
-                  alt=""
-                />
-                <span
-                  style={{
-                    textTransform: "capitalize",
-                    color: "#E4E6EB",
-                    fontSize: ".9375rem",
-                    marginLeft: "9px",
-                    textDecoration: "none",
-                    textDecorationLine: "none",
-                  }}
-                >
-                  Community Help
-                </span>
-              </div>
-            </Link>
-            <Link
-              to="/"
-              style={{ textDecoration: "none", textDecorationLine: "none" }}
-            >
-              <div
-                className="create__animation"
-                style={{
-                  padding: "8px 5px",
-                  borderRadius: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/yv/r/GJ4EaivDaSj.png"
-                  style={{
-                    width: "28px",
-                    marginLeft: "2px",
-                    height: "28px",
-                    borderRadius: "50%",
-                  }}
-                  alt=""
-                />
-                <span
-                  style={{
-                    textTransform: "capitalize",
-                    color: "#E4E6EB",
-                    fontSize: ".9375rem",
-                    marginLeft: "9px",
-                    textDecoration: "none",
-                    textDecorationLine: "none",
-                  }}
-                >
-                  Facebook Pay
-                </span>
-              </div>
-            </Link>
-            <Link
-              to="/"
-              style={{ textDecoration: "none", textDecorationLine: "none" }}
-            >
-              <div
-                className="create__animation"
-                style={{
-                  padding: "8px 5px",
-                  borderRadius: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/yQ/r/MN5ZSGIfEZ3.png"
-                  style={{
-                    width: "28px",
-                    marginLeft: "2px",
-                    height: "28px",
-                    borderRadius: "50%",
-                  }}
-                  alt=""
-                />
-                <span
-                  style={{
-                    color: "#E4E6EB",
-                    fontSize: ".9375rem",
-                    marginLeft: "9px",
-                    textDecoration: "none",
-                    textDecorationLine: "none",
-                  }}
-                >
-                  Friends lists
-                </span>
-              </div>
-            </Link>
-            <Link
-              to="/"
-              style={{ textDecoration: "none", textDecorationLine: "none" }}
-            >
-              <div
-                className="create__animation"
-                style={{
-                  padding: "8px 5px",
-                  borderRadius: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/n2vd2VduYc1.png"
-                  style={{
-                    width: "28px",
-                    marginLeft: "2px",
-                    height: "28px",
-                    borderRadius: "50%",
-                  }}
-                  alt=""
-                />
-                <span
-                  style={{
-                    textTransform: "capitalize",
-                    color: "#E4E6EB",
-                    fontSize: ".9375rem",
-                    marginLeft: "9px",
-                    textDecoration: "none",
-                    textDecorationLine: "none",
-                  }}
-                >
-                  Fundraisers
-                </span>
-              </div>
-            </Link>
-            <Link
-              to="/"
-              style={{ textDecoration: "none", textDecorationLine: "none" }}
-            >
-              <div
-                className="create__animation"
-                style={{
-                  padding: "8px 5px",
-                  borderRadius: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/yt/r/PObY9OA5lvJ.png"
-                  style={{
-                    width: "28px",
-                    marginLeft: "2px",
-                    height: "28px",
-                    borderRadius: "50%",
-                  }}
-                  alt=""
-                />
-                <span
-                  style={{
-                    textTransform: "capitalize",
-                    color: "#E4E6EB",
-                    fontSize: ".9375rem",
-                    marginLeft: "9px",
-                    textDecoration: "none",
-                    textDecorationLine: "none",
-                  }}
-                >
-                  Games
-                </span>
-              </div>
-            </Link>
-            <Link
-              to="/"
-              style={{ textDecoration: "none", textDecorationLine: "none" }}
-            >
-              <div
-                className="create__animation"
-                style={{
-                  padding: "8px 5px",
-                  borderRadius: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/9bekmF_PzNp.png"
-                  style={{
-                    width: "28px",
-                    marginLeft: "2px",
-                    height: "28px",
-                    borderRadius: "50%",
-                  }}
-                  alt=""
-                />
-                <span
-                  style={{
-                    color: "#E4E6EB",
-                    fontSize: ".9375rem",
-                    marginLeft: "9px",
-                    textDecoration: "none",
-                    textDecorationLine: "none",
-                  }}
-                >
-                  Gaming video
-                </span>
-              </div>
-            </Link>
-            <Link
-              to="/"
-              style={{ textDecoration: "none", textDecorationLine: "none" }}
-            >
-              <div
-                className="create__animation"
-                style={{
-                  padding: "8px 5px",
-                  borderRadius: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/yo/r/DO-SN-shaZL.png"
-                  style={{
-                    width: "28px",
-                    marginLeft: "2px",
-                    height: "28px",
-                    borderRadius: "50%",
-                  }}
-                  alt=""
-                />
-                <span
-                  style={{
-                    textTransform: "capitalize",
-                    color: "#E4E6EB",
-                    fontSize: ".9375rem",
-                    marginLeft: "9px",
-                    textDecoration: "none",
-                    textDecorationLine: "none",
-                  }}
-                >
-                  Jobs
-                </span>
-              </div>
-            </Link>
-            <Link
-              to="/"
-              style={{ textDecoration: "none", textDecorationLine: "none" }}
-            >
-              <div
-                className="create__animation"
-                style={{
-                  padding: "8px 5px",
-                  borderRadius: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/yG/r/Nl9CPY6q_n-.png"
-                  style={{
-                    width: "28px",
-                    marginLeft: "2px",
-                    height: "28px",
-                    borderRadius: "50%",
-                  }}
-                  alt=""
-                />
-                <span
-                  style={{
-                    color: "#E4E6EB",
-                    fontSize: ".9375rem",
-                    marginLeft: "9px",
-                    textDecoration: "none",
-                    textDecorationLine: "none",
-                  }}
-                >
-                  Live videos
-                </span>
-              </div>
-            </Link>
-            <Link
-              to="/"
-              style={{ textDecoration: "none", textDecorationLine: "none" }}
-            >
-              <div
-                className="create__animation"
-                style={{
-                  padding: "8px 5px",
-                  borderRadius: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/y6/r/VPndBxotRgH.png"
-                  style={{
-                    width: "28px",
-                    marginLeft: "2px",
-                    height: "28px",
-                    borderRadius: "50%",
-                  }}
-                  alt=""
-                />
-                <span
-                  style={{
-                    color: "#E4E6EB",
-                    fontSize: ".9375rem",
-                    marginLeft: "9px",
-                    textDecoration: "none",
-                    textDecorationLine: "none",
-                  }}
-                >
-                  Memories
-                </span>
-              </div>
-            </Link>
-            <Link
-              to="/"
-              style={{ textDecoration: "none", textDecorationLine: "none" }}
-            >
-              <div
-                className="create__animation"
-                style={{
-                  padding: "8px 5px",
-                  borderRadius: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/y5/r/4Y9Xi2D3hJv.png"
-                  style={{
-                    width: "28px",
-                    marginLeft: "2px",
-                    height: "28px",
-                    borderRadius: "50%",
-                  }}
-                  alt=""
-                />
-                <span
-                  style={{
-                    color: "#E4E6EB",
-                    fontSize: ".9375rem",
-                    marginLeft: "9px",
-                    textDecoration: "none",
-                    textDecorationLine: "none",
-                  }}
-                >
-                  Messenger
-                </span>
-              </div>
-            </Link>
-            <Link
-              to="/"
-              style={{ textDecoration: "none", textDecorationLine: "none" }}
-            >
-              <div
-                className="create__animation"
-                style={{
-                  padding: "8px 5px",
-                  borderRadius: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/y_/r/NYOGcd-z-qs.png"
-                  style={{
-                    width: "28px",
-                    marginLeft: "2px",
-                    height: "28px",
-                    borderRadius: "50%",
-                  }}
-                  alt=""
-                />
-                <span
-                  style={{
-                    color: "#E4E6EB",
-                    fontSize: ".9375rem",
-                    marginLeft: "9px",
-                    textDecoration: "none",
-                    textDecorationLine: "none",
-                  }}
-                >
-                  Offers
-                </span>
-              </div>
-            </Link>
+                See less
+              </span>
+            </div>
           </>
         ) : (
           <div
