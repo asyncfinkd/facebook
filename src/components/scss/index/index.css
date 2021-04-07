@@ -250,6 +250,40 @@ body {
   border-radius: 10px;
 }
 
+.i {
+  width: 24px;
+  height: 24px;
+  background-position: 0 -25px;
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yg/r/DbEUifURKkT.png");
+  background-size: auto;
+  background-repeat: no-repeat;
+  margin-right: 8px;
+}
+
+.ii {
+  width: 24px;
+  height: 24px;
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yg/r/DbEUifURKkT.png");
+  background-position: 0 -125px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  margin-right: 8px;
+}
+
+.iii {
+  width: 24px;
+  height: 24px;
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yg/r/DbEUifURKkT.png");
+  background-position: 0 -50px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  margin-right: 8px;
+}
+
+.hqol:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 @media all and (max-width: 1250px) {
   .responsive\:info {
     display: -webkit-box;
