@@ -4,18 +4,20 @@ interface Props {
   mind: any;
   setShowMind: any;
   handle: any;
+  setMind?: any;
 }
 
 export const WhatsYourMindPopup: React.FC<Props> = ({
   mind,
   setShowMind,
   handle,
+  setMind,
 }) => {
   const [user] = useState<any>(
     JSON.parse(localStorage.getItem("user") || "{}")
   );
   const callBackPostError = useCallback(
-    (input) => {
+    (input?: any) => {
       if (mind.length > 0) {
         setShowMind(true);
       } else {
@@ -208,11 +210,219 @@ export const WhatsYourMindPopup: React.FC<Props> = ({
                       fontWeight: 600,
                       fontSize: "0.9375rem",
                       textTransform: "capitalize",
+                      marginTop: "-8px",
                     }}
                   >
                     {user.username} {user.lastname}
                   </span>
+                  <div style={{ marginTop: "2px" }}>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <div>
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <div
+                            aria-label="Edit privacy. Sharing with Public."
+                            role="button"
+                            style={{ cursor: "pointer", position: "relative" }}
+                          >
+                            <span
+                              dir="auto"
+                              style={{
+                                color: "#e4e6eb",
+                                fontWeight: 600,
+                                cursor: "pointer",
+                              }}
+                            >
+                              <div
+                                style={{
+                                  position: "relative",
+                                  color: "#e4e6eb",
+                                  fontWeight: 600,
+                                  fontSize: "0.8125rem",
+                                  cursor: "pointer",
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    backgroundColor: "rgba(255,255,255,0.1)",
+                                    paddingLeft: "8px",
+                                    borderRadius: "6px",
+                                    paddingTop: "4px",
+                                    paddingBottom: "4px",
+                                    paddingRight: "4px",
+                                    color: "#e4e6eb",
+                                    fontWeight: 600,
+                                  }}
+                                >
+                                  <div
+                                    style={{
+                                      display: "flex",
+                                      alignItems: "center",
+                                      justifyContent: "center",
+                                      color: "#e4e6eb",
+                                      fontWeight: 600,
+                                      fontSize: "0.8125rem",
+                                    }}
+                                  >
+                                    <div
+                                      style={{
+                                        marginRight: "4px",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                      }}
+                                    >
+                                      <img
+                                        src="https://static.xx.fbcdn.net/rsrc.php/v3/yQ/r/axobuTi734a.png"
+                                        alt=""
+                                        width="12"
+                                        height="12"
+                                        style={{ filter: "invert(100%)" }}
+                                      />
+                                    </div>
+                                    <span
+                                      dir="auto"
+                                      style={{
+                                        marginRight: "4px",
+                                        fontWeight: 600,
+                                        color: "#e4e6eb",
+                                        fontSize: "0.8125rem",
+                                      }}
+                                    >
+                                      Public
+                                    </span>
+                                    <i
+                                      style={{
+                                        width: "12px",
+                                        height: "12px",
+                                        backgroundPosition: "-17px -885px",
+                                        backgroundImage:
+                                          "url('https://static.xx.fbcdn.net/rsrc.php/v3/yi/r/1fcdIJQ2VJC.png')",
+                                        backgroundSize: "auto",
+                                        backgroundRepeat: "no-repeat",
+                                        filter: "invert(100%)",
+                                      }}
+                                    ></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            </div>
+            <div style={{ marginLeft: "11px" }}>
+              <textarea
+                placeholder={`What's on your mind, ${user.username}?`}
+                rows={10}
+                value={mind}
+                id="overflow"
+                onChange={setMind}
+                className="hover__placeholder"
+                cols={51}
+                style={{
+                  resize: "none",
+                  backgroundColor: "transparent",
+                  border: "none",
+                  color: "#e4e6eb",
+                  fontWeight: 400,
+                  outline: "none",
+                  paddingRight: "15px",
+                  maxHeight: "167px",
+                  maxWidth: "100%",
+                  fontSize: "1.5rem",
+                }}
+              ></textarea>
+            </div>
+            <div
+              style={{
+                paddingBottom: "16px",
+                paddingTop: "16px",
+                position: "relative",
+              }}
+            >
+              <div
+                style={{
+                  marginRight: "16px",
+                  borderRadius: "6px",
+                  padding: "16px",
+                  display: "flex",
+                  alignItems: "center",
+                  marginLeft: "16px",
+                  backgroundColor: "#242526",
+                  borderLeft: "1px solid #3e4042",
+                  borderBottom: "1px solid #3e4042",
+                  borderRight: "1px solid #3e4042",
+                  borderTop: "1px solid #3e4042",
+                  boxShadow: "0 1px 2px rgba(255, 255, 255, 0.05)",
+                  marginTop: "-15px",
+                }}
+              >
+                <div style={{ paddingLeft: "8px", paddingRight: "8px" }}>
+                  <div
+                    aria-label="Add to your post"
+                    role="button"
+                    style={{ cursor: "pointer" }}
+                  >
+                    <span
+                      style={{
+                        color: "#e4e6eb",
+                        fontWeight: 600,
+                        fontSize: "0.9375rem",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Add to your post
+                    </span>
+                  </div>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    position: "absolute",
+                    outline: "none",
+                    right: "20px",
+                    top: "10px",
+                  }}
+                >
+                  <RenderPostComponent classcom="iql" />
+                  <RenderPostComponent classcom="iiql" />
+                  <RenderPostComponent classcom="iiiql" />
+                  <RenderPostComponent classcom="iiiiql" />
+                  <RenderPostComponent classcom="iiiiiql" />
+                  <RenderPostComponent classcom="iiiiiiql" />
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                paddingRight: "16px",
+                paddingLeft: "16px",
+                paddingBottom: "16px",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <div
+                className={mind ? "enableButton" : "qlx"}
+                aria-label="Post"
+                aria-disabled={mind ? "false" : "true"}
+                role="button"
+              >
+                <span className={mind ? "enableSpan" : "disableSpan"}>
+                  Post
+                </span>
+                {callBackPostError()}
               </div>
             </div>
           </div>

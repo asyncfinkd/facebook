@@ -53,6 +53,7 @@ export const WhatsYourMind: React.FC = () => {
           mind={catchMind}
           setShowMind={showMind}
           handle={() => setShowPopup(false)}
+          setMind={(e: any) => setCatchMind(e.target.value)}
         />
       )}
       <div
