@@ -51,9 +51,10 @@ export const WhatsYourMind: React.FC = () => {
       {showPopup && (
         <WhatsYourMindPopup
           mind={catchMind}
-          setShowMind={showMind}
+          setShowMind={setShowMind}
           handle={() => setShowPopup(false)}
           setMind={(e: any) => setCatchMind(e.target.value)}
+          showMind={showMind}
         />
       )}
       <div

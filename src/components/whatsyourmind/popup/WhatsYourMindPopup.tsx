@@ -5,17 +5,20 @@ interface Props {
   setShowMind: any;
   handle: any;
   setMind?: any;
+  showMind: any;
 }
 
 export const WhatsYourMindPopup: React.FC<Props> = ({
   mind,
   setShowMind,
   handle,
+  showMind,
   setMind,
 }) => {
   const [user] = useState<any>(
     JSON.parse(localStorage.getItem("user") || "{}")
   );
+  const [validationError, setValidationError] = useState<any>(false);
   const callBackPostError = useCallback(
     (input?: any) => {
       if (mind.length > 0) {
@@ -102,7 +105,7 @@ export const WhatsYourMindPopup: React.FC<Props> = ({
           <div
             style={{
               width: "500px",
-              height: "428px",
+              height: "438px",
               position: "absolute",
               backgroundColor: "#242526",
               transform: "translate(-50%, -50%)",
@@ -414,12 +417,12 @@ export const WhatsYourMindPopup: React.FC<Props> = ({
               }}
             >
               <div
-                className={mind ? "enableButton" : "qlx"}
+                className={showMind ? "enableButton" : "qlx"}
                 aria-label="Post"
-                aria-disabled={mind ? "false" : "true"}
+                aria-disabled={showMind ? "false" : "true"}
                 role="button"
               >
-                <span className={mind ? "enableSpan" : "disableSpan"}>
+                <span className={showMind ? "enableSpan" : "disableSpan"}>
                   Post
                 </span>
                 {callBackPostError()}
