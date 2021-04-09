@@ -9,13 +9,13 @@
 <h3 align="center">
   <a href="">Contribute</a>
   <span> · </span>
-  <a href="https://google.com">Official Google</a>
+  <a href="https://facebook.com">Official Facebook</a>
 </h3>
 
 ---
 
 ## Contributions
 
-Google is an open source where you can contribute at any time. For this we need to get acquainted first with our policies. 
+Facebook is an open source where you can contribute at any time. For this we need to get acquainted first with our policies. 
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on this project.
