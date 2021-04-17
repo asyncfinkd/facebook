@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { ProfileHero } from "./ProfileHero";
 
 export const Profile: React.FC = () => {
   const [user, setUser] = useState<any>(
@@ -17,7 +18,7 @@ export const Profile: React.FC = () => {
         history.push("/")
       ) : (
         <>
-          <p>hello fb</p>
+          <ProfileHero />
         </>
       )}
     </>
