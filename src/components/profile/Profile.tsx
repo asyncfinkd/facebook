@@ -10,8 +10,10 @@ export const Profile: React.FC = () => {
     <>
       {localStorage.getItem("logged") != "true" ||
       !user.username ||
+      typeof user.username != "string" ||
       !user.lastname ||
-      !user.username ? (
+      typeof user.lastname != "string" ||
+      typeof user.email != "string" ? (
         history.push("/")
       ) : (
         <>
